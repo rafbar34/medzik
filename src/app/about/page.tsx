@@ -1,3 +1,6 @@
+import CustomCarousel, {
+  Carousel,
+} from "@/components/common/carousel/carousel";
 import { Box, Card, Paper, Typography } from "@mui/material";
 import React from "react";
 const About = () => {
@@ -8,6 +11,33 @@ const About = () => {
   );
 };
 export default About;
+
+const data = [
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house",
+  },
+  {
+    src: "/pictures/mock4.png",
+    alt: "house",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house",
+  },
+  {
+    src: "/pictures/mock4.png",
+    alt: "house",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house",
+  },
+  {
+    src: "/pictures/mock4.png",
+    alt: "house",
+  },
+];
 
 const HeroVideo = () => {
   return (
@@ -32,9 +62,9 @@ const HeroVideo = () => {
           </h1>
         </div>
       </Paper>
-      <Box className="flex justify-evenly  mb-16" >
+      <Box className="flex justify-evenly  mb-16">
         <Card
-           variant="outlined"
+          variant="outlined"
           className=" w-1/3 p-5 rounded-md border-2"
           elevation={0}
         >
@@ -54,11 +84,11 @@ const HeroVideo = () => {
             użytkowych. Dzięki wieloletniemu doświadczeniu oraz dbałości o każdy
             detal, realizujemy nawet najbardziej wymagające projekty. Nasza
             misja to dostarczenie usług najwyższej jakości, które spełnią
-            oczekiwania nawet najbardziej wymagających klientów. 
+            oczekiwania nawet najbardziej wymagających klientów.
           </Typography>
         </Card>
         <Card
-        variant="outlined"
+          variant="outlined"
           className=" w-1/3 p-5 rounded-md border-2"
           elevation={0}
         >
@@ -68,19 +98,40 @@ const HeroVideo = () => {
           >
             Nasza oferta obejmuje:
           </Typography>
-            <Typography
-              sx={{ fontSize: 18 }}
-              variant="body1"
-            >
-              <p>•Malowanie, szpachlowanie, tapetowanie</p>
-              <p>•Układanie płytek, paneli, parkietów</p>
-              <p>•Montaż sufitów podwieszanych i ścianek działowych</p>
-              <p>•Instalacje elektryczne i hydrauliczne</p>
-              <p>•Kompleksowe remonty łazienek i kuchni</p>
-              <p>•Kompleksowe remonty łazienek i kuchni2</p>
-            </Typography>
-     
+          <Typography
+            sx={{ fontSize: 18 }}
+            variant="body1"
+          >
+            •Malowanie, szpachlowanie, tapetowanie
+            <br />
+            •Układanie płytek, paneli, parkietów
+            <br />
+            •Montaż sufitów podwieszanych i ścianek działowych
+            <br />
+            •Instalacje elektryczne i hydrauliczne
+            <br />
+            •Kompleksowe remonty łazienek i kuchni
+            <br />
+            •Kompleksowe remonty łazienek i kuchni2
+            <br />
+          </Typography>
         </Card>
+      </Box>
+      <Box className="flex justify-evenly  mb-16 bg-black pb-5 pt-5 b items-center">
+        <Box className="w-1/2">
+          <CustomCarousel>
+            {data.map((image, index) => {
+              return (
+                <img
+                  key={index}
+                  src={image.src}
+                  alt={image.alt}
+                  width={400}
+                />
+              );
+            })}
+          </CustomCarousel>
+        </Box>
       </Box>
     </div>
   );
