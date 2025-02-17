@@ -1,8 +1,43 @@
-import CustomCarousel, {
-  Carousel,
-} from "@/components/common/carousel/carousel";
-import { Box, Card, Paper, Typography } from "@mui/material";
+import { IconsSection } from "@/components/about/icons-section";
+import { Header } from "@/components/common/text/header";
+import {
+  Box,
+  Button,
+  Card,
+  ImageList,
+  ImageListItem,
+  Paper,
+  Typography,
+} from "@mui/material";
 import React from "react";
+
+const data = [
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house1",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house2",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house3",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house4",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house5",
+  },
+  {
+    src: "/pictures/mock3.jpg",
+    alt: "house6",
+  },
+];
+
 const About = () => {
   return (
     <div>
@@ -11,33 +46,6 @@ const About = () => {
   );
 };
 export default About;
-
-const data = [
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house",
-  },
-  {
-    src: "/pictures/mock4.png",
-    alt: "house",
-  },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house",
-  },
-  {
-    src: "/pictures/mock4.png",
-    alt: "house",
-  },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house",
-  },
-  {
-    src: "/pictures/mock4.png",
-    alt: "house",
-  },
-];
 
 const HeroVideo = () => {
   return (
@@ -68,12 +76,8 @@ const HeroVideo = () => {
           className=" w-1/3 p-5 rounded-md border-2"
           elevation={0}
         >
-          <Typography
-            sx={{ textAlign: "center", marginBottom: 2 }}
-            variant="h4"
-          >
-            Kim jesteśmy
-          </Typography>
+          <Header title=" Dlaczego my ?" />
+
           <Typography
             className="text-justify"
             sx={{ fontSize: 18 }}
@@ -92,12 +96,7 @@ const HeroVideo = () => {
           className=" w-1/3 p-5 rounded-md border-2"
           elevation={0}
         >
-          <Typography
-            sx={{ marginBottom: 2 }}
-            variant="h4"
-          >
-            Nasza oferta obejmuje:
-          </Typography>
+          <Header title="Nasza oferta obejmuje:" />
           <Typography
             sx={{ fontSize: 18 }}
             variant="body1"
@@ -117,20 +116,28 @@ const HeroVideo = () => {
           </Typography>
         </Card>
       </Box>
-      <Box className="flex justify-evenly  mb-16 bg-black pb-5 pt-5 b items-center">
-        <Box className="w-1/2">
-          <CustomCarousel>
-            {data.map((image, index) => {
-              return (
-                <img
-                  key={index}
-                  src={image.src}
-                  alt={image.alt}
-                  width={400}
-                />
-              );
-            })}
-          </CustomCarousel>
+      <IconsSection />
+      <Box>
+        <Header title="Portfolio" />
+
+        <ImageList
+          sx={{ width: "100%", height: '100%'}}
+          cols={3}
+
+        >
+          {data.map((item) => (
+            <ImageListItem key={item.alt}>
+              <img
+                src={item.src}
+                alt={item.alt}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+        <Box className="w-full flex justify-center mt-10">
+
+        <Button  className="w-36 h-16 bg-amber-500 text-white rounded-md" >Zobacz więcej</Button>
         </Box>
       </Box>
     </div>
