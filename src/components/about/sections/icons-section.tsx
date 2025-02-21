@@ -6,44 +6,44 @@ import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlin
 import TagFacesOutlinedIcon from "@mui/icons-material/TagFacesOutlined";
 import { TextIcon } from "@/components/common/text/text-with-icon";
 import { Box } from "@mui/material";
-import { Header } from "../common/text/header";
+import { Header } from "@/components/common/text/header";
 
 export const IconsSection = () => {
   return (
-    <Box className="flex  mb-16 bg-amber-500   justify-center flex-col">
+    <Box className="flex  mb-16 bg-[rgba(245,158,11,0.9)]   justify-center flex-col">
       <Box className="w-full">
         <Header
           title="Gwarantujemy"
           color={"white"}
         />
       </Box>
-      <Box className="flex  mb-16 bg-amber-500  justify-evenly gap-20 flex-wrap">
+      <Box className="flex  mb-16 bg-transparent justify-evenly gap-20 flex-wrap">
         <TextIcon text="Profesjonalizm">
           <WorkspacePremiumOutlinedIcon
-            sx={{ fontSize: 54, color: "white", opacity: 0.8 }}
+            sx={{ fontSize: 54, color: "white", opacity: 1 }}
           />
         </TextIcon>
 
         <TextIcon text="Terminowość">
           <CalendarMonthOutlinedIcon
-            sx={{ fontSize: 54, color: "white", opacity: 0.8 }}
+            sx={{ fontSize: 54, color: "white", opacity: 1 }}
           />
         </TextIcon>
 
         <TextIcon text="Kompleksowa obsługa">
           <HandymanOutlinedIcon
-            sx={{ fontSize: 54, color: "white", opacity: 0.8 }}
+            sx={{ fontSize: 54, color: "white", opacity: 1 }}
           />
         </TextIcon>
 
         <TextIcon text=" Konkurencyjne ceny">
           <MonetizationOnOutlinedIcon
-            sx={{ fontSize: 54, color: "white", opacity: 0.8 }}
+            sx={{ fontSize: 54, color: "white", opacity: 1 }}
           />
         </TextIcon>
         <TextIcon text="Gwarancja satysfakcji">
           <TagFacesOutlinedIcon
-            sx={{ fontSize: 54, color: "white", opacity: 0.8 }}
+            sx={{ fontSize: 54, color: "white", opacity: 1 }}
           />
         </TextIcon>
       </Box>
