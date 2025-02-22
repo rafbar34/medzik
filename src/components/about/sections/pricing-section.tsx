@@ -1,22 +1,21 @@
 import { CustomButton } from "@/components/common/button/button";
 import { Header } from "@/components/common/text/header";
-import { Box, Button, Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import React from "react";
 
 export const PricingSection = () => {
   return (
     <Box className="flex justify-center w-full h-screen ">
-      <Box className="w-5/6 flex  border-[1px] border-amber-500/50 rounded-lg h-2/3">
+      <Card elevation={2} className="w-5/6 flex  border-[1.5px] border-amber-500/50 rounded-lg h-2/3">
         <Card
           className=" relative  w-1/2  bg-[url('/pictures/mock6.png')] bg-no-repeat bg-cover bg-center "
-          elevation={0}
+
         >
           <Box className="absolute inset-0 bg-white opacity-60"></Box>{" "}
         </Card>
         <Card
-          variant="outlined"
           className="  w-1/2 p-5 bg-white/40  flex flex-col justify-between  "
-          elevation={0}
+
         >
           <Header
             title="Wyceń swój projekt"
@@ -56,7 +55,7 @@ export const PricingSection = () => {
           </Box>
         </Card>
         <Card />
-      </Box>
+      </Card>
     </Box>
   );
 };

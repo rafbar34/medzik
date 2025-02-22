@@ -5,14 +5,16 @@ export const Header = ({
   title,
   color = "black",
   className,
+  textAlign = "center",
 }: {
   title: string;
   color?: string;
   className?: string;
+  textAlign?: string;
 }) => {
   return (
     <Typography
-      sx={{ textAlign: "center", marginBottom: 2, color: color }}
+      sx={{ textAlign: textAlign, marginBottom: 2, color: color }}
       variant="h4"
       className={className}
     >

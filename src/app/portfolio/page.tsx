@@ -2,7 +2,6 @@ import { CustomButton } from "@/components/common/button/button";
 import { Header } from "@/components/common/text/header";
 import {
   Box,
-  Button,
   Card,
   CardActions,
   CardContent,
@@ -32,9 +31,9 @@ const Portfolio = () => {
 export default Portfolio;
 
 const InfoCard = () => (
-  <Card sx={{ maxWidth: "100%" }}>
+  <Card elevation={4} sx={{ maxWidth: "100%" }}>
     <CardMedia
-      sx={{ height: 140 }}
+      sx={{ height: 250 }}
       image="/pictures/mock3.jpg"
       title="green iguana"
     />

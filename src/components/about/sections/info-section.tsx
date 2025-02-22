@@ -42,9 +42,9 @@ InfoSection.Card = ({
 }) => {
   return (
     <Card
-      variant="outlined"
-      className=" w-1/3 p-5  bg-white/40 border-[2.5px] border-amber-500/50 rounded-lg"
-      elevation={0}
+
+      className=" w-1/3 p-5  rounded-lg"
+      elevation={2}
     >
       <Header title={title} />
 
