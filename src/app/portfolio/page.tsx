@@ -1,4 +1,5 @@
 import { CustomButton } from "@/components/common/button/button";
+import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
 import { Header } from "@/components/common/text/header";
 import {
   Box,
@@ -12,26 +13,29 @@ import React from "react";
 
 const Portfolio = () => {
   return (
-    <div className="mt-20">
-<Header title="Portfolio"/>
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-      <InfoCard />
-    </div>
-    </div>
+    <MarginTopSpacer>
+      <Header title="Portfolio" />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+        <InfoCard />
+      </div>
+    </MarginTopSpacer>
   );
 };
 
 export default Portfolio;
 
 const InfoCard = () => (
-  <Card elevation={4} sx={{ maxWidth: "100%" }}>
+  <Card
+    elevation={4}
+    sx={{ maxWidth: "100%" }}
+  >
     <CardMedia
       sx={{ height: 250 }}
       image="/pictures/mock3.jpg"
@@ -62,12 +66,12 @@ const InfoCard = () => (
       </Box>
     </CardContent>
     <CardActions>
-        <CustomButton
-          width={"full"}
-          title="Szczegóły"
-          fontWeight="font-sm"
-          className="text-sm"
-        />
+      <CustomButton
+        width={"full"}
+        title="Szczegóły"
+        fontWeight="font-sm"
+        className="text-sm"
+      />
     </CardActions>
   </Card>
 );
