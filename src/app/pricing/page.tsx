@@ -12,33 +12,10 @@ const Pricing = () => {
           className=" w-full p-5  rounded-lg"
           elevation={2}
         >
-          <Header title={"Planujesz budowę, remont lub modernizację?"} />
+          <Header
+            title={"Skorzystaj z naszej rzetelnej i darmowej wyceny już teraz!"}
+          />
 
-          <Card className=" w-full p-5 mb-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-            <Typography>
-              Oferujemy rzetelną kalkulację kosztów, dopasowaną do Twoich
-              potrzeb i budżetu
-            </Typography>
-          </Card>
-          <Card className=" w-full p-5 mb-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-            <Typography>
-              Nasz zespół dokładnie przeanalizuje zakres prac, materiały oraz
-              czas realizacji, dzięki temu unikniesz nieprzewidzianych wydatków
-              i zyskasz pełną kontrolę nad inwestycją
-            </Typography>
-          </Card>
-          <Card className=" w-full p-5 mb-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-            <Typography>
-              Pracujemy na nowoczesnych materiałach i sprawdzonych
-              technologiach, aby zapewnić trwałość i estetykę każdej realizacji.
-            </Typography>
-          </Card>
-          <Card className=" w-full p-5 mb-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-            <Typography>
-              Każdy projekt traktujemy indywidualnie, dostosowując rozwiązania
-              do potrzeb klienta.
-            </Typography>
-          </Card>
           <Typography
             className="text-justify font-bold"
             variant="h6"
@@ -48,22 +25,28 @@ const Pricing = () => {
           <Typography
             className="text-justify"
             variant="body1"
-            sx={{ fontSize: 16 }}
+            sx={{ fontSize: 18 }}
           >
             Przygotujemy dla Ciebie szczegółową ofertę. Szybko, profesjonalnie i
-            bez zobowiązań! Sprawdź, ile może kosztować Twoja inwestycja już
-            dziś
+            bez zobowiązań!
+          </Typography>
+          <Typography
+            className="text-justify"
+            variant="body1"
+            sx={{ fontSize: 18 }}
+          >
+            Sprawdź, ile może kosztować Twoja inwestycja już dziś
           </Typography>
 
           <Typography
             className="text-justify"
             variant="body1"
-            sx={{ fontSize: 16, marginTop: 3 }}
+            sx={{ fontSize: 18, marginTop: 3 }}
           >
             Aby przygotować dla Ciebie dokładną wycenę, potrzebujemy kilku
             kluczowych dokumentów:
           </Typography>
-          <ul style={{ fontSize: 16, marginTop: 3, marginBottom: 3 }}>
+          <ul style={{ fontSize: 16, marginTop: 3, marginBottom: 20 }}>
             <li className="font-bold">
               -Projekt architektoniczny lub aranżacyjny
             </li>
@@ -76,13 +59,6 @@ const Pricing = () => {
               -Pozwolenia lub zgłoszenia (jeśli wymagane)
             </li>
           </ul>
-          <Typography
-            className="text-justify"
-            variant="body1"
-            sx={{ fontSize: 16 }}
-          >
-            Skorzystaj z naszej rzetelnej i darmowej wyceny już teraz!
-          </Typography>
           <MultiFileUpload />
         </Card>
       </Box>

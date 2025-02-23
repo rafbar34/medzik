@@ -38,7 +38,7 @@ export const MultiFileUpload = () => {
   };
 
   return (
-    <div className="p-4 border border-gray-300 rounded-xl shadow-sm w-full flex items-center flex-col">
+    <div className="p-4 border border-amber-500 rounded-xl shadow-sm w-full flex items-center flex-col">
       <label className="block text-gray-700 font-medium mb-2">
         Dodaj pliki:
       </label>
@@ -48,7 +48,7 @@ export const MultiFileUpload = () => {
           onChange={handleFileChange}
           fullWidth
           variant="outlined"
-          className="mb-4 bg-white w-full"
+          className="mb-4 bg-white w-full  p-5"
         />
         {files.length > 0 && (
           <div className="mt-2">
