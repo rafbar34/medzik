@@ -7,41 +7,30 @@ import React from "react";
 const Pricing = () => {
   return (
     <MarginTopSpacer>
-      <Box className="p-10">
+      <Box className="p-10 ">
         <Card
-          className=" w-full p-5  rounded-lg"
+          className=" w-full p-5  border-[1.5px] border-amber-500/50 rounded-lg"
           elevation={2}
         >
           <Header
-            title={"Skorzystaj z naszej rzetelnej i darmowej wyceny już teraz!"}
+            title={"Wypełnij formularz online lub skontaktuj się z nami!"}
           />
 
           <Typography
-            className="text-justify font-bold"
-            variant="h6"
-          >
-            Wypełnij formularz online lub skontaktuj się z nami!
-          </Typography>
-          <Typography
-            className="text-justify"
+            className="text-center"
             variant="body1"
             sx={{ fontSize: 18 }}
           >
             Przygotujemy dla Ciebie szczegółową ofertę. Szybko, profesjonalnie i
             bez zobowiązań!
-          </Typography>
-          <Typography
-            className="text-justify"
-            variant="body1"
-            sx={{ fontSize: 18 }}
-          >
-            Sprawdź, ile może kosztować Twoja inwestycja już dziś
+  
+            Sprawdź, ile może kosztować Twoja inwestycja już dziś!
           </Typography>
 
           <Typography
             className="text-justify"
             variant="body1"
-            sx={{ fontSize: 18, marginTop: 3 }}
+            sx={{ fontSize: 20, marginTop: 3 }}
           >
             Aby przygotować dla Ciebie dokładną wycenę, potrzebujemy kilku
             kluczowych dokumentów:

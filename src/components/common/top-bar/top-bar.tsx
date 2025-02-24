@@ -15,7 +15,7 @@ export const TopBar = () => {
 
 
   return (
-    <AppBar className="bg-black/40" position="fixed">
+    <AppBar className="bg-black/40" position="fixed" >
       <Container className="content-center" maxWidth="xl" sx={{height:80}} >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />

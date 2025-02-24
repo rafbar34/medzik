@@ -46,6 +46,7 @@ const InfoCard = () => (
         gutterBottom
         variant="h6"
         component="div"
+        className="text-[#f5740b]"
       >
         Mieszkanie 55m2
       </Typography>

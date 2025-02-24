@@ -1,6 +1,6 @@
 import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
 import { Header } from "@/components/common/text/header";
-import { Box, Card, CardContent, IconButton, Typography } from "@mui/material";
+import { Box, Card, IconButton, Typography } from "@mui/material";
 import React from "react";
 import { Email, Phone, LocationOn } from "@mui/icons-material";
 
@@ -10,33 +10,36 @@ const Contact = () => {
       <Box className="p-5">
         <Card className=" w-full  p-5  rounded-lg border-[rgba(245,158,11,1)] border-2 text-white">
           <Header title="Skontaktuj się z nami!" />
-          <Card
+          <Box className="w-full mx-auto my-6 flex justify-between">
+            <Card
             elevation={0}
-            className="w-full mx-auto my-6 flex"
-          >
-            <Box className="w-1/2">
-              <div className="flex items-center mb-4 ">
-                <IconButton color="primary">
-                  <Phone />
-                </IconButton>
-                <Typography variant="body1">+48 123 456 789</Typography>
-              </div>
-              <div className="flex items-center mb-4">
-                <IconButton color="primary">
-                  <Email />
-                </IconButton>
-                <Typography variant="body1">kontakt@przyklad.pl</Typography>
-              </div>
-              <div className="flex items-center mb-4">
-                <IconButton color="primary">
-                  <LocationOn />
-                </IconButton>
-                <Typography variant="body1">
-                  {" "}
-                  Ul. Przykładowa 15, 00-000 Warszawa
-                </Typography>
-              </div>{" "}
-            </Box>
+              className="w-1/2 mr-5  flex justify-center items-center flex-col"
+
+            >
+              <Box>
+                <div className="flex items-center mb-4 ">
+                  <IconButton color="primary">
+                    <Phone />
+                  </IconButton>
+                  <Typography variant="h5">+48 123 456 789</Typography>
+                </div>
+                <div className="flex items-center mb-4">
+                  <IconButton color="primary">
+                    <Email />
+                  </IconButton>
+                  <Typography variant="h5">kontakt@przyklad.pl</Typography>
+                </div>
+                <div className="flex items-center mb-4">
+                  <IconButton color="primary">
+                    <LocationOn />
+                  </IconButton>
+                  <Typography variant="h5">
+                    {" "}
+                    Ul. Przykładowa 15, 00-000 Warszawa
+                  </Typography>
+                </div>{" "}
+              </Box>
+            </Card>
             <Box className="w-1/2 h-full">
               {/* Dodajemy adres siedziby */}
 
@@ -50,7 +53,7 @@ const Contact = () => {
                 ></iframe>
               </div>
             </Box>
-          </Card>
+          </Box>
         </Card>
       </Box>
     </MarginTopSpacer>

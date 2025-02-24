@@ -26,7 +26,6 @@ export const MultiFileUpload = () => {
         );
         event.target.value = "";
       }
-      console.log(event.target.files, validFiles);
       if (validFiles.length > 0) {
         setFiles((prev: any) => [...prev, ...Array.from(event.target.files)]);
       }
@@ -47,7 +46,7 @@ export const MultiFileUpload = () => {
           type="file"
           onChange={handleFileChange}
           fullWidth
-          variant="outlined"
+          variant="standard"
           className="mb-4 bg-white w-full  p-5"
         />
         {files.length > 0 && (
@@ -55,7 +54,6 @@ export const MultiFileUpload = () => {
             <p className="text-sm text-gray-600 mb-2">Wybrane pliki:</p>
             <ul className="space-y-2">
               {files.map((file, index) => {
-                console.log(file);
                 return (
                   <li
                     key={index}
@@ -76,7 +74,7 @@ export const MultiFileUpload = () => {
         )}
         <CustomButton
           title="Prześlij"
-          width={"1/3"}
+          width={"2/5"}
         />
       </Box>
     </div>
