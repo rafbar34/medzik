@@ -2,6 +2,9 @@
   "name": "medzik",
   "version": "0.1.0",
   "private": true,
+  "config": {
+    "apiUrl": "https://localhost:3000"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -8,15 +8,30 @@ import Typography from "@mui/material/Typography";
 import AdbIcon from "@mui/icons-material/Adb";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
+import { useRouter } from "next/navigation";
 
-const pages = ["O nas", "Projekty", "Wycena", "Kontakt"];
+const pages = [
+  { url: "/about", title: "O nas" },
+  { url: "/portfolio", title: "Projekty" },
+  { url: "/pricing", title: "Wycena" },
+  { url: "/contact", title: "Kontakt" },
+];
 
 export const TopBar = () => {
-
-
+  const router = useRouter();
+  const handleNavigate = (url: string) => {
+    router.push(url);
+  };
   return (
-    <AppBar className="bg-black/40" position="fixed" >
-      <Container className="content-center" maxWidth="xl" sx={{height:80}} >
+    <AppBar
+      className="bg-black/40"
+      position="fixed"
+    >
+      <Container
+        className="content-center"
+        maxWidth="xl"
+        sx={{ height: 80 }}
+      >
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
           <Typography
@@ -40,17 +55,17 @@ export const TopBar = () => {
           <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
               <Button
-                key={page}
-                sx={{ my: 2, color: "white", display: "block", mx:2 }}
+                key={page.url}
+                sx={{ my: 2, color: "white", display: "block", mx: 2 }}
                 size="large"
+                onClick={() => handleNavigate(page.url)}
               >
-                {page}
+                {page.title}
               </Button>
             ))}
           </Box>
-          
         </Toolbar>
       </Container>
     </AppBar>
   );
-}
+};
