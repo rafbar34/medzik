@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ImageList, ImageListItem, Modal } from "@mui/material";
 import React from "react";
 

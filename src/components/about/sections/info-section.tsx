@@ -7,26 +7,26 @@ export const InfoSection = () => {
     <Box className="flex justify-evenly mb-16">
       <InfoSection.Card title="Dlaczego my ?">
         <Card className=" w-full  p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>
+          <Typography className="font-semibold">
             Specjalizujemy się w kompleksowych wykończeniach
             wnętrz, remontach oraz adaptacjach mieszkań, domów i lokali
             użytkowych.
           </Typography>
         </Card>
         <Card className=" w-full  p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>
+          <Typography className="font-semibold">
             Dzięki wieloletniemu doświadczeniu oraz dbałości o każdy detal,
             realizujemy nawet najbardziej wymagające projekty.
           </Typography>
         </Card>
         <Card className=" w-full  p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>
+          <Typography className="font-semibold">
             Nasza misja to dostarczenie usług najwyższej jakości, które spełnią
             oczekiwania nawet najbardziej wymagających klientów.
           </Typography>
         </Card>
         <Card className=" w-full  p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>
+          <Typography className="font-semibold">
             Nasz zespół szczegółowo analizuje zakres prac, materiały oraz czas
             realizacji
           </Typography>
@@ -35,21 +35,21 @@ export const InfoSection = () => {
 
       <InfoSection.Card title="Nasza oferta obejmuje:">
         <Card className=" w-full p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>Malowanie, szpachlowanie, tapetowanie</Typography>
+          <Typography className="font-semibold">Malowanie, szpachlowanie, tapetowanie</Typography>
         </Card>
         <Card className=" w-full p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>Układanie płytek, paneli, parkietów</Typography>
+          <Typography className="font-semibold">Układanie płytek, paneli, parkietów</Typography>
         </Card>
         <Card className=" w-full p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>
+          <Typography className="font-semibold">
             Montaż sufitów podwieszanych i ścianek działowych
           </Typography>
         </Card>
         <Card className=" w-full p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>Instalacje elektryczne i hydrauliczne</Typography>
+          <Typography className="font-semibold">Instalacje elektryczne i hydrauliczne</Typography>
         </Card>
         <Card className=" w-full p-5  rounded-lg bg-[rgba(245,158,11,1)] text-white">
-          <Typography>Kompleksowe remonty łazienek i kuchni </Typography>
+          <Typography className="font-semibold">Kompleksowe remonty łazienek i kuchni </Typography>
         </Card>
       </InfoSection.Card>
     </Box>

@@ -10,14 +10,14 @@ import { Header } from "@/components/common/text/header";
 
 export const IconsSection = () => {
   return (
-    <Box className="flex  mb-16 bg-[rgba(245,158,11,0.9)]   justify-center flex-col">
-      <Box className="w-full">
+    <Box className="flex   mb-16 bg-[rgba(245,158,11,0.9)]   justify-between flex-col pb-5 pt-5">
+
         <Header
           title="Gwarantujemy"
           color={"white"}
         />
-      </Box>
-      <Box className="flex  mb-16 bg-transparent justify-evenly gap-20 flex-wrap">
+ 
+      <Box className="flex bg-transparent justify-evenly gap-20 flex-wrap">
         <TextIcon text="Profesjonalizm">
           <WorkspacePremiumOutlinedIcon
             sx={{ fontSize: 54, color: "white", opacity: 1 }}

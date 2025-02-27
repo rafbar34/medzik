@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { CustomButton } from "@/components/common/button/button";
 import { Header } from "@/components/common/text/header";
 import { Box, ImageList, ImageListItem } from "@mui/material";
@@ -50,6 +51,7 @@ export const PortfolioDemoSection = () => {
       </ImageList>
       <Box className="w-full flex justify-center  relative z-10 mt-5">
         <CustomButton
+        className="font-medium p-2"
           width={"1/5"}
           title="Zobacz więcej"
         />

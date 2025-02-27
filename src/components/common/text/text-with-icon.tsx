@@ -1,12 +1,12 @@
 import { Box, Typography } from "@mui/material";
-import React from "react";
+import React, { ReactNode } from "react";
 
 export const TextIcon = ({
   text,
   children,
 }: {
   text: string;
-  children: any;
+  children: ReactNode;
 }) => {
   return (
     <Box className="flex flex-col justify-center items-center">

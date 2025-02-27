@@ -34,6 +34,7 @@ export const PricingSection = () => {
           <Box className="w-full flex justify-center  relative z-10">
             <CustomButton
               width={"1/2"}
+              className="font-semibold"
               title="Wycena"
             />
           </Box>

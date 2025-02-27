@@ -27,7 +27,11 @@ export const MultiFileUpload = () => {
         event.target.value = "";
       }
       if (validFiles.length > 0) {
-        setFiles((prev: any) => [...prev, ...Array.from(event.target.files)]);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        setFiles((prev: any) => [
+          ...prev,
+          ...(event.target.files ? Array.from(event.target.files) : []),
+        ]);
       }
     }
   };
