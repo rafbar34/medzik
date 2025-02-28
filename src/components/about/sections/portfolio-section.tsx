@@ -2,6 +2,7 @@
 import { CustomButton } from "@/components/common/button/button";
 import { Header } from "@/components/common/text/header";
 import { Box, ImageList, ImageListItem } from "@mui/material";
+import Link from "next/link";
 import React from "react";
 
 const data = [
@@ -50,11 +51,13 @@ export const PortfolioDemoSection = () => {
         ))}
       </ImageList>
       <Box className="w-full flex justify-center  relative z-10 mt-5">
+        <Link href={"/portfolio"}>
         <CustomButton
         className="font-medium p-2"
-          width={"1/5"}
-          title="Zobacz więcej"
+        width={"1/5"}
+        title="Zobacz więcej"
         />
+        </Link>
       </Box>
     </Box>
   );

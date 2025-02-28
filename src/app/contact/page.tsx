@@ -10,10 +10,10 @@ const Contact = () => {
       <Box className="p-5">
         <Card className=" w-full  p-5  rounded-lg border-[rgba(245,158,11,1)] border-2 text-white">
           <Header title="Skontaktuj się z nami!" />
-          <Box className="w-full mx-auto my-6 flex justify-between">
-            <Card
-            elevation={0}
-              className="w-1/2 mr-5  flex justify-center items-center flex-col"
+          <Box className="w-full  flex justify-evenly">
+            <Card 
+            elevation={2}
+              className="w-1/3 mr-5  flex justify-center flex-col"
 
             >
               <Box>

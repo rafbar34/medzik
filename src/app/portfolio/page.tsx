@@ -1,4 +1,3 @@
-
 import { CustomButton } from "@/components/common/button/button";
 import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
 import { Header } from "@/components/common/text/header";
@@ -13,23 +12,20 @@ import {
 import React from "react";
 import Link from "next/link";
 
-async function getPortfolioItems() {
-  return [
-    {
-      id: "project-1",
-      title: "Mieszkanie 55m2",
-      desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
-    },
-    {
-      id: "project-2",
-      title: "Mieszkanie 55m2",
-      desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
-    },
-  ];
-}
+const items = [
+  {
+    id: "project-1",
+    title: "Mieszkanie 55m2",
+    desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
+  },
+  {
+    id: "project-2",
+    title: "Mieszkanie 55m2",
+    desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
+  },
+];
 
-const Portfolio = async () => {
-  const items = await getPortfolioItems();
+const Portfolio = () => {
   return (
     <MarginTopSpacer>
       <Header title="Portfolio" />

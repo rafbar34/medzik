@@ -1,9 +1,21 @@
+import React from "react";
+import { IconsSection } from "@/components/about/sections/icons-section";
+import { InfoSection } from "@/components/about/sections/info-section";
+import { WallPaperSection } from "@/components/about/sections/wall-paper-section";
+import { PortfolioDemoSection } from "@/components/about/sections/portfolio-section";
+import { PricingSection } from "@/components/about/sections/pricing-section";
 
-
-export default function Home() {
+const About = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-        test
-    </div>
+    <div className=" w-full overflow-hidden">
+    <WallPaperSection />
+    <InfoSection />
+    <PortfolioDemoSection />
+    <IconsSection />
+    <PricingSection />
+  </div>
   );
-}
+};
+export default About;
+
+
