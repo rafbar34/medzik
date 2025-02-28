@@ -8,7 +8,7 @@ import Typography from "@mui/material/Typography";
 import AdbIcon from "@mui/icons-material/Adb";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const pages = [
   { url: "/", title: "Strona główna" },
@@ -18,14 +18,10 @@ const pages = [
 ];
 
 export const TopBar = () => {
-  const router = useRouter();
-  const handleNavigate = (url: string) => {
-    router.push(url);
-  };
+
   return (
     <AppBar
-      className="bg-black/40"
-      sx={{ bgColor: "rgba(0 0 0, 0.4)" }}
+      sx={{ bgcolor: "rgba(0, 0, 0, 0.4)" }}
       position="fixed"
     >
       <Container
@@ -55,14 +51,17 @@ export const TopBar = () => {
 
           <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
             {pages.map((page) => (
-              <Button
+              <Link
                 key={page.url}
-                sx={{ my: 2, color: "white", display: "block", mx: 2 }}
-                size="large"
-                onClick={() => handleNavigate(page.url)}
+                href={`${page.url}`}
               >
-                {page.title}
-              </Button>
+                <Button
+                  sx={{ my: 2, color: "white", display: "block", mx: 2 }}
+                  size="large"
+                >
+                  {page.title}
+                </Button>
+              </Link>
             ))}
           </Box>
         </Toolbar>
