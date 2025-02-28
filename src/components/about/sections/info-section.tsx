@@ -71,7 +71,12 @@ InfoSection.InfoSquare = ({ children }: { children: ReactNode }) => {
       sx={{ backgroundColor: "rgba(245,158,11,1)" }}
       className=" w-full  p-5  rounded-lg text-white"
     >
-      <Typography className="font-semibold">{children}</Typography>
+      <Typography
+        sx={{ color: "white" }}
+        className="font-semibold"
+      >
+        {children}
+      </Typography>
     </Card>
   );
 };

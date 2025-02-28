@@ -11,7 +11,15 @@ export const PricingSection = () => {
         elevation={2}
         className="w-5/6 flex  border-[1.5px] border-amber-500/50 rounded-lg h-[450px]"
       >
-        <Card className=" relative  w-1/2  bg-[url('/pictures/mock6.png')] bg-no-repeat bg-cover bg-center ">
+        <Card
+          className=" relative  w-1/2 "
+          sx={{
+            backgroundImage: "url('/pictures/mock6.png')",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
           <Box className="absolute inset-0 bg-white opacity-60"></Box>{" "}
         </Card>
         <Card className="  w-1/2 p-5 bg-white/40  flex flex-col justify-between ">
@@ -30,7 +38,10 @@ export const PricingSection = () => {
             więcej, klikając w przycisk poniżej!
           </Typography>
           <Box className="w-full flex justify-center  relative z-10">
-            <Link href={`/pricing`} className="w-full">
+            <Link
+              href={`/pricing`}
+              className="w-full"
+            >
               <CustomButton
                 width={"1/2"}
                 className="font-semibold"

@@ -25,6 +25,7 @@ export const TopBar = () => {
   return (
     <AppBar
       className="bg-black/40"
+      sx={{ bgColor: "rgba(0 0 0, 0.4)" }}
       position="fixed"
     >
       <Container

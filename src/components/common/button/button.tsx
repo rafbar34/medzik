@@ -15,7 +15,8 @@ export const CustomButton = ({
   return (
     <Box className="w-full flex justify-center  relative z-10 mt-5">
       <Button
-        className={`w-${width} h-full bg-amber-500 text-white rounded-md ${fontWeight} ${className}`}
+        className={`w-${width} h-full text-white rounded-md ${fontWeight} ${className}`}
+        sx={{ bgcolor: "#f59e0b" }}
       >
         {title}
       </Button>
