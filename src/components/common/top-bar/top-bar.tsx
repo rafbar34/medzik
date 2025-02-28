@@ -11,7 +11,7 @@ import Button from "@mui/material/Button";
 import { useRouter } from "next/navigation";
 
 const pages = [
-  { url: "/about", title: "Strona główna" },
+  { url: "/", title: "Strona główna" },
   { url: "/portfolio", title: "Projekty" },
   { url: "/pricing", title: "Wycena" },
   { url: "/contact", title: "Kontakt" },
