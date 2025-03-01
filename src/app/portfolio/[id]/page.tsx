@@ -1,4 +1,4 @@
-import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
+import { MarginSpacer } from "@/components/common/margin-top-spacer";
 import { CarDescription } from "@/components/portfolio/cards/card--description";
 import { CardImage } from "@/components/portfolio/cards/card--image";
 import { CardImages } from "@/components/portfolio/cards/card--images";
@@ -44,10 +44,9 @@ const data = [
   },
 ];
 
-
 const PortfolioCard = () => {
   return (
-    <MarginTopSpacer>
+    <MarginSpacer>
       <Box className="p-10">
         <Box className="flex justify-evenly h-full">
           <CarDescription />
@@ -55,10 +54,10 @@ const PortfolioCard = () => {
         </Box>
         <CardImages
           data={data}
-          id={String(Math.random()*1000)}
+          id={String(Math.random() * 1000)}
         />
       </Box>
-    </MarginTopSpacer>
+    </MarginSpacer>
   );
 };
 export default PortfolioCard;

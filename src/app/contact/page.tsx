@@ -1,4 +1,4 @@
-import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
+import { MarginSpacer } from "@/components/common/margin-top-spacer";
 import { Header } from "@/components/common/text/header";
 import { Box, Card, IconButton, Typography } from "@mui/material";
 import React from "react";
@@ -6,15 +6,14 @@ import { Email, Phone, LocationOn } from "@mui/icons-material";
 
 const Contact = () => {
   return (
-    <MarginTopSpacer>
+    <MarginSpacer>
       <Box className="p-5">
         <Card className=" w-full  p-5  rounded-lg border-[rgba(245,158,11,1)] border-2 text-white">
           <Header title="Skontaktuj się z nami!" />
           <Box className="w-full  flex justify-evenly">
-            <Card 
-            elevation={2}
+            <Card
+              elevation={2}
               className="w-1/3 mr-5  flex justify-center flex-col"
-
             >
               <Box>
                 <div className="flex items-center mb-4 ">
@@ -56,7 +55,7 @@ const Contact = () => {
           </Box>
         </Card>
       </Box>
-    </MarginTopSpacer>
+    </MarginSpacer>
   );
 };
 

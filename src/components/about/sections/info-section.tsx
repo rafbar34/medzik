@@ -4,7 +4,7 @@ import React, { ReactNode } from "react";
 
 export const InfoSection = () => {
   return (
-    <Box className="flex justify-evenly mb-16">
+    <Box className="flex justify-evenly">
       <InfoSection.Card title="Dlaczego my ?">
         <InfoSection.InfoSquare>
           Specjalizujemy się w kompleksowych wykończeniach wnętrz, remontach
@@ -56,7 +56,7 @@ InfoSection.Card = ({
 }) => {
   return (
     <Card
-      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl"
+      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl bg-white/90"
       elevation={2}
     >
       <Header title={title} />
@@ -68,7 +68,7 @@ InfoSection.Card = ({
 InfoSection.InfoSquare = ({ children }: { children: ReactNode }) => {
   return (
     <Card
-      sx={{ backgroundColor: "rgba(245,158,11,1)" }}
+      sx={{ backgroundColor: "rgba(97, 86, 86, 0.5)" }}
       className=" w-full  p-5  rounded-lg text-white"
     >
       <Typography

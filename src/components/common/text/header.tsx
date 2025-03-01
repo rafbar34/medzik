@@ -14,7 +14,7 @@ export const Header = ({
 }) => {
   return (
     <Typography
-      sx={{ textAlign: textAlign, marginBottom: 2, color: color }}
+      sx={{ textAlign: textAlign, marginBottom: 2, marginTop: 2, color: color }}
       variant="h4"
       className={className}
     >

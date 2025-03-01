@@ -6,7 +6,7 @@ import React from "react";
 
 export const PricingSection = () => {
   return (
-    <Box className="flex justify-center w-full mb-20 h-[450px] ">
+    <Box className="flex justify-center w-full h-[450px] ">
       <Card
         elevation={2}
         className="w-5/6 flex  border-[1.5px] border-amber-500/50 rounded-lg h-[450px]"

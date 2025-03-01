@@ -1,5 +1,5 @@
 import { CustomButton } from "@/components/common/button/button";
-import { MarginTopSpacer } from "@/components/common/margin-top-spacer";
+import { MarginSpacer } from "@/components/common/margin-top-spacer";
 import { Header } from "@/components/common/text/header";
 import {
   Box,
@@ -27,7 +27,7 @@ const items = [
 
 const Portfolio = () => {
   return (
-    <MarginTopSpacer>
+    <MarginSpacer>
       <Header title="Portfolio" />
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
         {items.map((item: { id: string; title: string; desc: string }) => {
@@ -39,7 +39,7 @@ const Portfolio = () => {
           );
         })}
       </div>
-    </MarginTopSpacer>
+    </MarginSpacer>
   );
 };
 

@@ -10,7 +10,7 @@ import { Header } from "@/components/common/text/header";
 
 export const IconsSection = () => {
   return (
-    <Box className="flex   mb-16 bg-[rgba(245,158,11,0.9)]   justify-between flex-col pb-5 pt-5">
+    <Box className="flex  bg-[rgba(245,158,11,0.9)]   justify-between flex-col pb-5 pt-5">
 
         <Header
           title="Gwarantujemy"

@@ -5,27 +5,42 @@ export const WallPaperSection = () => {
   return (
     <Paper
       elevation={0}
-      className="relative h-[100vh]  w-full mb-16"
-      style={{ backgroundImage: "url('/pictures/mock3.jpg')", backgroundSize: 'cover' }}
+      className="relative h-[100vh]  w-full"
     >
+      <video
+        className="absolute top-0 left-0 w-full h-full object-cover"
+        autoPlay
+        loop
+        muted
+        playsInline
+      >
+        <source
+          src="/videos/mockvideo.mp4"
+          type="video/mp4"
+        />
+        Twoja przeglądarka nie obsługuje wideo.
+      </video>
       <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/40 text-white">
         <h1 className="text-md md:text-6xl font-bold text-center">
-        Projektujemy Twoją przyszłość
+          Projektujemy Twoją przyszłość
         </h1>
       </div>
     </Paper>
   );
 };
 
-{
-  /* <video
-    className="absolute top-0 left-0 w-full h-full object-cover"
-    autoPlay
-    loop
-    muted
-    playsInline
-  >
-<source src="/videos/mock2.mp4" type="video/mp4" />
-    Twoja przeglądarka nie obsługuje wideo.
-  </video> */
-}
+// {
+//   <video
+//     className="absolute top-0 left-0 w-full h-full object-cover"
+//     autoPlay
+//     loop
+//     muted
+//     playsInline
+//   >
+//     <source
+//       src="/videos/mock2.mp4"
+//       type="video/mp4"
+//     />
+//     Twoja przeglądarka nie obsługuje wideo.
+//   </video>;
+// }
