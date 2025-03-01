@@ -12,12 +12,12 @@ const About = () => {
       elevation={0}
       className="relative  w-full overflow-hidden"
       style={{
-        backgroundImage: "url('/pictures/mock12.png')",
+        backgroundImage: "url('/pictures/tool-4.jpg')",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
       }}
     >
-      <Box className={"bg-white/70 pb-20 gap-14 flex flex-col"}>
+      <Box className={"bg-white/70 pb-20 gap-20 flex flex-col"}>
         <WallPaperSection />
         <InfoSection />
         <PortfolioDemoSection />

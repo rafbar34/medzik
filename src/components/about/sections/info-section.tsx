@@ -56,7 +56,7 @@ InfoSection.Card = ({
 }) => {
   return (
     <Card
-      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl bg-white/90"
+      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl bg-white/80"
       elevation={2}
     >
       <Header title={title} />

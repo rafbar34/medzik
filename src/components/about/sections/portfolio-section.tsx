@@ -1,6 +1,6 @@
 "use client";
 import { CustomButton } from "@/components/common/button/button";
-import { Card, ImageList, ImageListItem } from "@mui/material";
+import { Box, ImageList, ImageListItem } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -33,16 +33,8 @@ const data = [
 ];
 const PortfolioDemoSection = () => {
   return (
-    <Card
-      elevation={2}
-      className="w-full "
-      sx={{
-        border: "1.5px solid rgba(245, 158, 11, 0.5)", 
-        borderRadius: "0.5rem", 
-        position: "relative", 
-        overflow: "hidden",
-        backgroundColor: "rgba(255, 255, 255, 0.4)",
-      }}
+    <Box
+      className="w-full border-[1.5px] border-amber-500/50 rounded-lg relative overflow-hidden group bg-white/40"
     >
 
       <ImageList
@@ -74,9 +66,7 @@ const PortfolioDemoSection = () => {
           </Link>
         </motion.div>
       </ImageList>
-
-      {/* Wysuwane ciemne okno */}
-    </Card>
+    </Box>
   );
 };
 
