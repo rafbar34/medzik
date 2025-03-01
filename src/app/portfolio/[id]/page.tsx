@@ -1,5 +1,5 @@
 import { MarginSpacer } from "@/components/common/margin-top-spacer";
-import { CarDescription } from "@/components/portfolio/cards/card--description";
+import { CardDescription } from "@/components/portfolio/cards/card--description";
 import { CardImage } from "@/components/portfolio/cards/card--image";
 import { CardImages } from "@/components/portfolio/cards/card--images";
 import { Box } from "@mui/material";
@@ -46,18 +46,22 @@ const data = [
 
 const PortfolioCard = () => {
   return (
-    <MarginSpacer>
-      <Box className="p-10">
-        <Box className="flex justify-evenly h-full">
-          <CarDescription />
-          <CardImage data={data} />
-        </Box>
-        <CardImages
-          data={data}
-          id={String(Math.random() * 1000)}
-        />
+    <Box
+    sx={{
+      backgroundImage: "url('/pictures/mock7.jpg')",
+      backgroundSize: "cover",
+      backgroundAttachment: "fixed",
+    }}
+    className="p-10 pt-20">
+      <Box className="flex justify-evenly h-full">
+        <CardDescription />
+        <CardImage data={data} />
       </Box>
-    </MarginSpacer>
+      <CardImages
+        data={data}
+        id={String(Math.random() * 1000)}
+      />
+    </Box>
   );
 };
 export default PortfolioCard;

@@ -1,6 +1,5 @@
 import { CustomButton } from "@/components/common/button/button";
-import { MarginSpacer } from "@/components/common/margin-top-spacer";
-import { Header } from "@/components/common/text/header";
+
 import {
   Box,
   Card,
@@ -11,6 +10,7 @@ import {
 } from "@mui/material";
 import React from "react";
 import Link from "next/link";
+import zIndex from "@mui/material/styles/zIndex";
 
 const items = [
   {
@@ -27,8 +27,14 @@ const items = [
 
 const Portfolio = () => {
   return (
-    <MarginSpacer>
-      <Header title="Portfolio" />
+    <Box
+      className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
+      sx={{
+        backgroundImage: "url('/pictures/mock7.jpg')",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+      }}
+    >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
         {items.map((item: { id: string; title: string; desc: string }) => {
           return (
@@ -39,7 +45,7 @@ const Portfolio = () => {
           );
         })}
       </div>
-    </MarginSpacer>
+    </Box>
   );
 };
 
@@ -81,7 +87,10 @@ const InfoCard = ({
         </Box>
       </CardContent>
       <CardActions>
-        <Link href={`/portfolio/${item.id}`}>
+        <Link
+          style={{ width: "100%" }}
+          href={`/portfolio/${item.id}`}
+        >
           <CustomButton
             width={"full"}
             title="Szczegóły"

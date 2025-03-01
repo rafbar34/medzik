@@ -7,14 +7,14 @@ const Pricing = () => {
   return (
       <Paper
         elevation={0}
-        className=" h-screen w-full pt-12 flex items-center justify-center"
+        className=" full min-h-screen w-full pt-14 flex items-center justify-center"
         style={{
           backgroundImage: "url('/pictures/mock11.png')",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
         }}
       >
-        <Box className="p-10 opacity-90 ">
+        <Box className="p-10 opacity-90">
           <Card
             className=" w-full p-5  border-[1.5px] border-amber-500/50 rounded-lg"
             elevation={2}

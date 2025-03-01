@@ -1,27 +1,33 @@
 import { Header } from "@/components/common/text/header";
-import { Card, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
 
-export const CarDescription = () => {
+export const CardDescription = () => {
   return (
     <Card
-      className=" w-1/2 pt-3 px-3  bg-white/40  rounded-lg"
+      className=" w-1/2 pt-3 bg-white/40  rounded-lg"
       elevation={2}
     >
+      <Box className="px-5">
+
       <Header
         title={"Mieszkanie 55 m2"}
         textAlign="left"
         className="text-[#f5970b]"
-      />
-      <CarDescription.Description>
+        />
+      <CardDescription.Description>
         Kompleksowy remont mieszkania o powierzchni 55 m², wykonany przez [Nazwa
         Twojej Firmy]. Projekt obejmował pełne odświeżenie wnętrza, modernizację
         instalacji oraz wysokiej jakości wykończenie, zapewniające
         funkcjonalność i estetykę.
-      </CarDescription.Description>
+      </CardDescription.Description>
       <br />
+      </Box>
 
-      <Card elevation={2} className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)] border-x-[rgba(245,159,11,0.23)] border-2">
+      <Card
+        elevation={2}
+        className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)]  border-t-2"
+      >
         <Typography className="font-medium">
           Zakres prac:
           <br />
@@ -52,7 +58,7 @@ export const CarDescription = () => {
   );
 };
 // eslint-disable-next-line react/display-name
-CarDescription.Description = ({ children }: { children: ReactNode }) => {
+CardDescription.Description = ({ children }: { children: ReactNode }) => {
   return (
     <Typography
       className="text-justify "

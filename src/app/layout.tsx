@@ -13,7 +13,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-[url('/pictures/mock7.jpg')] bg-cover bg-no-repeat ">
+      <body
+        style={{
+          backgroundImage: "url('/pictures/tool-4.jpg')",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
         <TopBar />
         {children}
       </body>
