@@ -56,7 +56,7 @@ InfoSection.Card = ({
 }) => {
   return (
     <Card
-      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl bg-white/80"
+      className=" w-2/5 p-5 h-auto rounded-lg flex flex-col gap-2 justify-between shadow-xl bg-white/70"
       elevation={2}
     >
       <Header title={title} />
@@ -68,12 +68,11 @@ InfoSection.Card = ({
 InfoSection.InfoSquare = ({ children }: { children: ReactNode }) => {
   return (
     <Card
-      sx={{ backgroundColor: "rgba(97, 86, 86, 0.5)" }}
+      sx={{ backgroundColor: "rgba(47, 41, 41, 0.4)" }}
       className=" w-full  p-5  rounded-lg text-white"
     >
       <Typography
-        sx={{ color: "white" }}
-        className="font-semibold"
+        sx={{ color: "white", fontWeight:"600" }}
       >
         {children}
       </Typography>
