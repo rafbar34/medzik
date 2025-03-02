@@ -6,13 +6,14 @@ import React from "react";
 
 export const PricingSection = () => {
   return (
-    <Box className="flex justify-center w-full h-[450px] ">
+    <Box className="flex justify-center h-[900px] sm:h-[450px] ">
       <Card
         elevation={2}
-        className="w-5/6 flex  border-[1.5px] border-amber-500/50 rounded-lg h-[450px]"
+        className="sm:w-5/6 flex sm:flex-row flex-col  border-[1.5px] border-amber-500/50 rounded-lg h-[770px] sm:h-[450px]"
+        sx={{ backgroundColor: "rgba(255, 255, 255, 0.747)" }}
       >
         <Card
-          className=" relative  w-1/2 "
+          className=" relative  sm:w-1/2 h-1/2 sm:h-auto"
           sx={{
             backgroundImage: "url('/pictures/mock6.png')",
             backgroundRepeat: "no-repeat",
@@ -22,7 +23,7 @@ export const PricingSection = () => {
         >
           <Box className="absolute inset-0 bg-white opacity-60"></Box>{" "}
         </Card>
-        <Card className="  w-1/2 p-5 bg-white/40  flex flex-col justify-between ">
+        <Card className="  sm:w-1/2 p-5 bg-white/40  flex flex-col justify-between ">
           <Header
             title="Wyceń swój projekt"
             className="relative z-10"
