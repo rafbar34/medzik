@@ -59,8 +59,8 @@ const PortfolioDemoSection = () => {
         >
           <Link href={"/portfolio"}>
             <CustomButton
-              className="font-medium p-2 text-white"
-              width={"1/5"}
+              className="font-medium px-4 py-2 text-white"
+              width={"full"}
               title="Zobacz więcej"
             />
           </Link>

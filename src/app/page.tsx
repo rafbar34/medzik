@@ -13,8 +13,8 @@ const About = () => {
         <WallPaperSection />
         <InfoSection />
         <PortfolioDemoSection />
-        <IconsSection />
         <PricingSection />
+        <IconsSection />
       </Box>
   );
 };
