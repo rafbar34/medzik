@@ -5,7 +5,7 @@ import React, { ReactNode } from "react";
 export const CardDescription = () => {
   return (
     <Card
-      className=" w-1/2 pt-3 bg-white/40  rounded-lg"
+      className=" w-full  xl:w-1/2 pt-3 bg-white/40  rounded-lg"
       elevation={2}
     >
       <Box className="px-5">

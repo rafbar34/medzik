@@ -6,7 +6,7 @@ export const CardImage = ({ data }: {   data: Array<{ src: string; alt: string }
   return (
     <Card
       elevation={2}
-      className=" relative  w-1/2"
+      className=" relative  w-1/2 sm:w-0"
     >
       <Box className="absolute inset-0 bg-white opacity-40">
         <img

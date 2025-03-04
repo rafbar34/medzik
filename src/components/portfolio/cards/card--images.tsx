@@ -5,9 +5,11 @@ import { CardListImages } from "./card--list-images";
 export const CardImages = ({
   data,
   id,
+  isMobileDevice
 }: {
   data: Array<{ src: string; alt: string }>;
   id: string;
+  isMobileDevice:boolean
 }) => {
   const [isOpen, setIsOpen] = React.useState<boolean>(false);
   const handleClick = () => {
@@ -19,6 +21,7 @@ export const CardImages = ({
       handleClick={handleClick}
       isOpen={isOpen}
       key={id}
+      isMobileDevice={isMobileDevice}
     />
   );
 };
