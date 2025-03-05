@@ -86,7 +86,7 @@ const MobileCarousel = ({
   data: Array<{ src: string; alt: string }>;
   isOpen: boolean;
 }) => (
-  <Box sx={{marginTop:8}}>
+  <Box sx={{marginTop:8, paddingBottom:8}}>
 
   <CustomCarousel>
     {data.map((item) => (

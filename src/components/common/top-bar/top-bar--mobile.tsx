@@ -44,7 +44,7 @@ export const TopBarMobile = ({
                   <Button
                     sx={{ my: 2, color: "white", display: "block", mx: 2 }}
                     size="large"
-                    className="text-3xl"
+                    className="text-2xl"
                   >
                     {page.title}
                   </Button>

@@ -14,7 +14,7 @@ const Pricing = () => {
           backgroundAttachment: "fixed",
         }}
       >
-        <Box className="p-10 opacity-90">
+        <Box className="sm:p-10 opacity-90">
           <Card
             className=" w-full p-5  border-[1.5px] border-amber-500/50 rounded-lg"
             elevation={2}

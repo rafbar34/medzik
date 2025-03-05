@@ -12,7 +12,7 @@ const data = [
     alt: "house1",
   },
   {
-    src: "/pictures/mock3.jpg",
+    src: "/pictures/mock4.jpg",
     alt: "house2",
   },
   {
@@ -21,28 +21,16 @@ const data = [
   },
   {
     src: "/pictures/mock3.jpg",
-    alt: "house4",
+    alt: "house3",
+  },  {
+    src: "/pictures/mock4.jpg",
+    alt: "house2",
   },
   {
     src: "/pictures/mock3.jpg",
-    alt: "house5",
+    alt: "house3",
   },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house64",
-  },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house63",
-  },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house62",
-  },
-  {
-    src: "/pictures/mock3.jpg",
-    alt: "house61",
-  },
+
 ];
 
 const PortfolioCard = () => {

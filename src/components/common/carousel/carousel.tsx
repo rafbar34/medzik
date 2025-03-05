@@ -19,7 +19,6 @@ function CustomCarousel({ children }: { children: ReactNode }) {
       );
     }
   }, [slideDone]);
-
   const slideNext = () => {
     setActiveIndex((val) => {
       if (Array.isArray(children) && val >= children.length - 1) {

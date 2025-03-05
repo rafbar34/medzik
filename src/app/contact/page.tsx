@@ -5,16 +5,16 @@ import { Email, Phone, LocationOn } from "@mui/icons-material";
 
 const Contact = () => {
   return (
-    <Box className={"bg-white/30 flex items-center h-screen px-10"}>
+    <Box className={"bg-white/30 flex items-center h-screen sm:px-10"}>
       <Card
         sx={{ backgroundColor: "rgba(255, 255, 255, 0.851)" }}
-        className=" w-full pt-4 pb-14  rounded-lg border-[rgba(245,158,11,1)] border-2 text-white"
+        className="sm:h-auto h-screen w-full pt-14 sm:pt-4 pb-14  rounded-lg sm:border-[rgba(245,158,11,1)] border-2 text-white"
       >
         <Header title="Skontaktuj się z nami!" />
-        <Box className="w-full  flex justify-evenly pt-5">
+        <Box className="w-full xl:flex-row flex-col flex justify-evenly pt-5">
           <Card
             elevation={2}
-            className="w-1/3 mr-5  flex justify-center flex-col"
+            className="xl:w-1/3  xl:mr-5 px-2 sm:px-0  flex justify-center flex-col"
           >
             <Box>
               <div className="flex items-center mb-4 ">
@@ -40,8 +40,7 @@ const Contact = () => {
               </div>{" "}
             </Box>
           </Card>
-          <Box className="w-1/2 h-full">
-            {/* Dodajemy adres siedziby */}
+          <Box className="xl:w-1/2 h-full mt-2 xl:mt-0">
 
             <div className="">
               <iframe
