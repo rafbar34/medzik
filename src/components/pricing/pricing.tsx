@@ -2,7 +2,6 @@
 import { Box, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { CustomButton } from "../common/button/button";
-import emailjs from "@emailjs/browser";
 
 export const MultiFileUpload = () => {
   const [files, setFiles] = useState<File[]>([]);
