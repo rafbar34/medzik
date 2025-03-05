@@ -1,6 +1,7 @@
 import nodemailer from 'nodemailer';
 import fs from 'fs';
 import path from 'path';
+import { NextResponse } from "next/server";
 
 export const config = {
   api: {
@@ -53,8 +54,8 @@ export async function POST(req, res) {
 
     try {
       await transporter.sendMail(mailOptions);
-      return { message: 'E-mail wysłany pomyślnie' };
+      return NextResponse.json({ message: 'E-mail wysłany pomyślnie' });
     } catch (error) {
-      return { message: 'Błąd przy wysyłaniu e-maila',error }
+      return NextResponse.json({ message: 'Błąd przy wysyłaniu e-maila', error: error.message }, { status: 500 });
     }
 };
