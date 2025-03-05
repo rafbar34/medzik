@@ -9,12 +9,12 @@ export const config = {
   },
 };
 
-export async function POST(req, res) {
+export async function POST(req) {
 
   const formData = await req.formData();
   const file = formData.get('file');
   if (!file) {
-    return res.status(400).json({ message: 'Nie przesłano żadnego pliku.' });
+    return NextResponse.json({ message: 'Nie przesłano żadnego pliku.' });
   }
   const tempDirPath = path.join(__dirname, 'uploads'); 
   const tempFilePath = path.join(tempDirPath, file.name);
