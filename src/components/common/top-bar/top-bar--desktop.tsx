@@ -19,7 +19,7 @@ export const TopBarDesktop = ({
       sx={{ height: 80 }}
     >
       <Toolbar disableGutters>
-        <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
+        <AdbIcon sx={{ display: "flex", mr: 1 }} />
         <Typography
           variant="h5"
           noWrap
@@ -27,7 +27,7 @@ export const TopBarDesktop = ({
           href="#app-bar-with-responsive-menu"
           sx={{
             mr: 2,
-            display: { xs: "none", md: "flex" },
+            display: "flex",
             fontFamily: "monospace",
             fontWeight: 700,
             letterSpacing: ".3rem",
@@ -38,7 +38,7 @@ export const TopBarDesktop = ({
           LOGOe
         </Typography>
 
-        <Box sx={{ flexGrow: 2, display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ flexGrow: 2, display: "flex" }}>
           {pages.map((page) => (
             <Link
               key={page.url}

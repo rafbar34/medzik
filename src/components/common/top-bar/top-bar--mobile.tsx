@@ -10,7 +10,6 @@ export const TopBarMobile = ({
   pages: Array<{ url: string; title: string }>;
 }) => {
   const [isFullScreenMenu, setIsFullScreenMenu] = React.useState(false);
-
   const toggleFullScreenMenu = () => setIsFullScreenMenu(!isFullScreenMenu);
   return (
     <>

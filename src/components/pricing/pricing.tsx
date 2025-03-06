@@ -35,9 +35,12 @@ export const MultiFileUpload = () => {
     e.preventDefault();
     if (!formRef.current) return;
 
-    const formData = new FormData();
-    formData.append("file", files[0]);
-
+    const formData = new FormData(formRef.current);
+    files.forEach((file) => {
+      
+      formData.append("file", file);
+    });
+console.log(   formData.get("from_name"))
      const response = await fetch('/api/send-email', {
       method: 'POST',
       body: formData,
@@ -59,6 +62,7 @@ export const MultiFileUpload = () => {
             variant="standard"
             required
             className="mb-4 bg-white w-full p-2"
+            sx={{padding:2, marginBottom:4}}
           />
           <TextField
             type="email"
@@ -68,6 +72,7 @@ export const MultiFileUpload = () => {
             variant="standard"
             required
             className="mb-4 bg-white w-full p-2"
+            sx={{padding:2, marginBottom:4}}
           />
           <TextField
             type="file"
@@ -75,7 +80,7 @@ export const MultiFileUpload = () => {
             name="file"
             fullWidth
             variant="standard"
-            className="mb-4 bg-white w-full p-5"
+            sx={{padding:2, marginBottom:4}}
             inputProps={{ multiple: false }}
           />
           {files.length > 0 && (
