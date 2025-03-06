@@ -40,7 +40,7 @@ export const MultiFileUpload = () => {
       
       formData.append("file", file);
     });
-console.log(   formData.get("from_name"))
+
      const response = await fetch('/api/send-email', {
       method: 'POST',
       body: formData,

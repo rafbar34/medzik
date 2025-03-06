@@ -12,6 +12,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@datocms/cda-client": "^0.2.6",
     "@emailjs/browser": "^4.4.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -25,7 +26,8 @@
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
     "react-device-detect": "^2.2.3",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "styled-components": "^6.1.15"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
