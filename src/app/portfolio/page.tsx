@@ -54,7 +54,6 @@ const Portfolio = () => {
     };
     getData();
   }, []);
-  console.log(cardData);
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}

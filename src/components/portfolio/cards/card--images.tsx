@@ -21,16 +21,18 @@ export const CardImages = ({
     url: undefined | string | null;
     id: string | number | null | undefined;
   }>({ url: null, id: null });
+
   const handleClick = (
     url: undefined | string | null,
     id: undefined | null | number
   ) => {
     setIsOpenModalData({ url, id });
   };
+
   const handleClose = () => {
     setIsOpenModalData({ url: null, id: null });
-
   };
+
   return (
     <CardListImages
       data={data}

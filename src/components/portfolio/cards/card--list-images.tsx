@@ -80,22 +80,23 @@ const DesktopImageListItem = ({
   IsOpenModalData: {
     url: undefined | string | null;
     id: string | number | null | undefined;
-  };
+  } | null;
 }) => (
-  <ImageListItem
-    onClick={() => handleClick(item.custom_data.url, id)}
-    key={item.alt}
-  >
-    <img
-      src={item.custom_data.url}
-      alt={item.alt}
-      loading="lazy"
-      className="max-h-[350px]"
-    />
-
+  <>
+    <ImageListItem
+      onClick={() => handleClick(item.custom_data.url, id)}
+      key={item.alt}
+    >
+      <img
+        src={item.custom_data.url}
+        alt={item.alt}
+        loading="lazy"
+        className="max-h-[350px]"
+      />
+    </ImageListItem>
     <Modal
       open={IsOpenModalData?.url === item.custom_data.url}
-      onClose={handleClose}
+      onClick={() => handleClose()}
       className="flex justify-center items-center px-56"
     >
       <img
@@ -106,7 +107,7 @@ const DesktopImageListItem = ({
         height={"60vh"}
       />
     </Modal>
-  </ImageListItem>
+  </>
 );
 const MobileCarousel = ({
   handleClick,
@@ -126,7 +127,7 @@ const MobileCarousel = ({
   IsOpenModalData: {
     url: undefined | string | null;
     id: string | number | null | undefined;
-  };
+  } | null;
 }) => (
   <Box sx={{ marginTop: 8, paddingBottom: 8 }}>
     <CustomCarousel>
