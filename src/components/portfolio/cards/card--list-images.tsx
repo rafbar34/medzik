@@ -5,23 +5,36 @@ import { Box, ImageList, ImageListItem, Modal } from "@mui/material";
 import React from "react";
 
 export const CardListImages = ({
-  isOpen,
+  IsOpenModalData,
   handleClick,
   data,
-  isMobileDevice
+  isMobileDevice,
+  handleClose,
 }: {
-  isOpen: boolean;
-  handleClick: () => void;
-  data: Array<{ src: string; alt: string }>;
-  isMobileDevice:boolean
+  IsOpenModalData: {
+    url: undefined | string | null;
+    id: string | number | null | undefined;
+  };
+  handleClick: (url: string | undefined, id: number) => void;
+  handleClose: () => void;
+  data: Array<{
+    upload_id: string;
+    alt: string;
+    custom_data: {
+      url: string | undefined;
+    };
+  }>;
+  isMobileDevice: boolean;
 }) => {
-
   if (isMobileDevice) {
-    return <MobileCarousel
-      data={data}
-      isOpen={isOpen}
-      handleClick={handleClick}
-    />;
+    return (
+      <MobileCarousel
+        handleClose={handleClose}
+        data={data}
+        IsOpenModalData={IsOpenModalData}
+        handleClick={handleClick}
+      />
+    );
   } else {
     return (
       <ImageList
@@ -29,16 +42,19 @@ export const CardListImages = ({
         cols={3}
         className="mt-20"
       >
-        {data.map((item) => {
-          return (
-            <DesktopImageListItem
-              key={item.alt}
-              item={item}
-              isOpen={isOpen}
-              handleClick={handleClick}
-            />
-          );
-        })}
+        {data &&
+          data.map((item, index) => {
+            return (
+              <DesktopImageListItem
+                key={item.upload_id + index}
+                id={index}
+                item={item}
+                IsOpenModalData={IsOpenModalData}
+                handleClick={handleClick}
+                handleClose={handleClose}
+              />
+            );
+          })}
       </ImageList>
     );
   }
@@ -46,72 +62,97 @@ export const CardListImages = ({
 
 const DesktopImageListItem = ({
   handleClick,
+  handleClose,
   item,
-  isOpen,
+  IsOpenModalData,
+  id,
 }: {
-  handleClick: () => void;
-  item: { src: string; alt: string };
-  isOpen: boolean;
+  handleClick: (url: string | undefined, id: number) => void;
+  handleClose: () => void;
+  item: {
+    upload_id: string;
+    alt: string;
+    custom_data: {
+      url: string | undefined;
+    };
+  };
+  id: number;
+  IsOpenModalData: {
+    url: undefined | string | null;
+    id: string | number | null | undefined;
+  };
 }) => (
   <ImageListItem
-    onClick={handleClick}
+    onClick={() => handleClick(item.custom_data.url, id)}
     key={item.alt}
   >
     <img
-      src={item.src}
+      src={item.custom_data.url}
       alt={item.alt}
       loading="lazy"
+      className="max-h-[350px]"
     />
+
     <Modal
-      open={isOpen}
-      onClose={handleClick}
-      className="flex justify-center items-center"
+      open={IsOpenModalData?.url === item.custom_data.url}
+      onClose={handleClose}
+      className="flex justify-center items-center px-56"
     >
       <img
-        src={item.src}
+        src={item.custom_data.url}
         alt={item.alt}
         loading="lazy"
-        width={"80%"}
-        height={"80%"}
+        width={"60%"}
+        height={"60vh"}
       />
     </Modal>
   </ImageListItem>
 );
 const MobileCarousel = ({
   handleClick,
+  handleClose,
   data,
-  isOpen,
+  IsOpenModalData,
 }: {
-  handleClick: () => void;
-  data: Array<{ src: string; alt: string }>;
-  isOpen: boolean;
+  handleClick: (url: string | undefined, id: number) => void;
+  handleClose: () => void;
+  data: Array<{
+    upload_id: string;
+    alt: string;
+    custom_data: {
+      url: string | undefined;
+    };
+  }>;
+  IsOpenModalData: {
+    url: undefined | string | null;
+    id: string | number | null | undefined;
+  };
 }) => (
-  <Box sx={{marginTop:8, paddingBottom:8}}>
-
-  <CustomCarousel>
-    {data.map((item) => (
-      <div key={item.alt}>
-        <img
-          src={item.src}
-          alt={item.alt}
-          onClick={handleClick}
-          loading="lazy"
-          />
-        <Modal
-          open={isOpen}
-          onClose={handleClick}
-          className="flex justify-center items-center"
-          >
+  <Box sx={{ marginTop: 8, paddingBottom: 8 }}>
+    <CustomCarousel>
+      {data.map((item, index) => (
+        <div key={item.alt}>
           <img
-            src={item.src}
+            src={item.custom_data.url}
             alt={item.alt}
+            onClick={() => handleClick(item.custom_data.url, index)}
             loading="lazy"
-            width={"80%"}
-            height={"80%"}
+          />
+          <Modal
+            open={!!IsOpenModalData?.url}
+            onClose={handleClose}
+            className="flex justify-center items-center"
+          >
+            <img
+              src={item.custom_data.url}
+              alt={item.alt}
+              loading="lazy"
+              width={"80%"}
+              height={"80%"}
             />
-        </Modal>
-      </div>
-    ))}
-  </CustomCarousel>
-    </Box>
+          </Modal>
+        </div>
+      ))}
+    </CustomCarousel>
+  </Box>
 );

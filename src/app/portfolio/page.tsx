@@ -1,3 +1,4 @@
+"use client";
 import { CustomButton } from "@/components/common/button/button";
 
 import {
@@ -8,23 +9,52 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const items = [
-  {
-    id: "project-1",
-    title: "Mieszkanie 55m2",
-    desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
-  },
-  {
-    id: "project-2",
-    title: "Mieszkanie 55m2",
-    desc: "wyremontowanie mieszkania 55m2 Lorem ipsum dolor sit ametconsectetur adipisicing elit. Pariatur voluptatibus officiiseligendi impedit enim, sint, id laborum atque laudantium veniamsimilique veritatis. Voluptatibus recusandae facere nisi eligendiillo enim architecto!",
-  },
-];
+type CardsDataType = {
+  data: [
+    {
+      attributes: {
+        text1: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          document: any;
+        };
+        text2: string;
+        title: string;
+        images: [
+          {
+            upload_id: string;
+            alt: string;
+            custom_data: {
+              url: string | undefined;
+            };
+          },
+        ];
+      };
+    },
+  ];
+};
 
 const Portfolio = () => {
+  const [cardData, setCardData] = useState<CardsDataType | null>(null);
+
+  useEffect(() => {
+    const getData = async () => {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_API_TOKEN}`,
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          "X-Api-Version": "3",
+        },
+      });
+      setCardData((await res.json()) ?? []);
+    };
+    getData();
+  }, []);
+  console.log(cardData);
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -35,14 +65,17 @@ const Portfolio = () => {
       }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
-        {items.map((item: { id: string; title: string; desc: string }) => {
-          return (
-            <InfoCard
-              key={item.id}
-              item={item}
-            />
-          );
-        })}
+        {cardData?.data &&
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          cardData?.data.map((item: any) => {
+            return (
+              <InfoCard
+                key={item?.id}
+                id={item?.id}
+                item={item?.attributes}
+              />
+            );
+          })}
       </div>
     </Box>
   );
@@ -52,8 +85,24 @@ export default Portfolio;
 
 const InfoCard = ({
   item,
+  id,
 }: {
-  item: { id: string; title: string; desc: string };
+  id: string;
+  item: {
+    title: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    text1: any;
+    text2: string;
+    images: [
+      {
+        upload_id: string;
+        alt: string;
+        custom_data: {
+          url: string | undefined;
+        };
+      },
+    ];
+  };
 }) => {
   return (
     <Card
@@ -62,7 +111,7 @@ const InfoCard = ({
     >
       <CardMedia
         sx={{ height: 250 }}
-        image="/pictures/mock3.jpg"
+        image={item?.images[0]?.custom_data?.url}
         title="green iguana"
       />
       <CardContent>
@@ -82,13 +131,15 @@ const InfoCard = ({
             overflow: "hidden",
           }}
         >
-          <Typography variant="body2">{item?.desc}</Typography>
+          <Typography variant="body2">
+            {item?.text1?.document?.children[0].children[0].value}
+          </Typography>
         </Box>
       </CardContent>
       <CardActions>
         <Link
           style={{ width: "100%" }}
-          href={`/portfolio/${item.id}`}
+          href={`/portfolio/${id}`}
         >
           <CustomButton
             width={"full"}

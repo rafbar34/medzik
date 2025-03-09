@@ -2,17 +2,28 @@
 import { Box, Card } from "@mui/material";
 import React from "react";
 
-export const CardImage = ({ data }: {   data: Array<{ src: string; alt: string }>; }) => {
+export const CardImage = ({
+  data,
+}: {
+  data: Array<{
+    upload_id: string;
+    alt: string;
+    custom_data: {
+      url: string | undefined;
+    };
+  }>;
+}) => {
+  if (!data[0]) return;
   return (
     <Card
       elevation={2}
-      className=" relative  w-1/2 sm:w-0"
+      className=" relative  sm:w-1/2 w-0 sm:mt-20"
     >
       <Box className="absolute inset-0 bg-white opacity-40">
         <img
-          src={data[0].src}
-          alt={data[0].alt}
-          className="w-full h-full object-cover"
+          src={data[0]?.custom_data?.url}
+          alt={"bg photo"}
+          className="w-full min-h-[350px] h-full object-fill"
           loading="lazy"
         />
       </Box>{" "}
