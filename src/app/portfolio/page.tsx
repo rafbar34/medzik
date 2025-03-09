@@ -106,7 +106,8 @@ const InfoCard = ({
   return (
     <Card
       elevation={4}
-      sx={{ maxWidth: "100%" }}
+      className="shadow-md"
+      sx={{ maxWidth: "100%", backgroundColor:"rgba(255, 255, 255, 0.062)", border:'1px solid rgba(245,10,116,0.2)' }}
     >
       <CardMedia
         sx={{ height: 250 }}
@@ -141,7 +142,7 @@ const InfoCard = ({
           href={`/portfolio/${id}`}
         >
           <CustomButton
-            width={"full"}
+            width={"1/2"}
             title="Szczegóły"
             fontWeight="font-semibold"
             className="text-sm"

@@ -65,7 +65,7 @@ const PortfolioCard = () => {
       }}
       className="sm:p-10 pt-20"
     >
-      <Box className="flex sm:flex-row flex-col justify-evenly h-full">
+      <Box className="flex sm:flex-row flex-col justify-evenly h-full sm:min-w-[900px]">
         <CardDescription
           title={cardData?.data?.attributes?.title}
           text1={

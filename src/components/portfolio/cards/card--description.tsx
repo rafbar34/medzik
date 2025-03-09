@@ -13,7 +13,8 @@ export const CardDescription = ({
 }) => {
   return (
     <Card
-      className=" w-full  xl:w-1/2 pt-3 bg-white/40  rounded-lg min-h-96 sm:mt-20"
+      className=" w-full  sm:w-2/3 pt-3  rounded-lg min-h-[28rem] sm:mt-20"
+      sx={{backgroundColor:'rgba(255,255,255,0.4)'}}
       elevation={2}
     >
       <Box className="px-5">
@@ -28,15 +29,13 @@ export const CardDescription = ({
 
       <Card
         elevation={2}
-        className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)]  border-t-2 h-full"
+        className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)]  border-t-2 h-full flex"
       >
         <Typography
-          variant="body1"
           component="div"
-          sx={{ textWrap: "wrap" }}
           className="font-medium"
         >
-          <div dangerouslySetInnerHTML={{ __html: text2 }} />
+          <div style={{textWrap:"wrap", wordBreak:'break-word'}} dangerouslySetInnerHTML={{ __html: text2 }} />
         </Typography>
       </Card>
     </Card>

@@ -23,7 +23,9 @@ export const PricingSection = () => {
         >
           <Box className="absolute inset-0 bg-white opacity-60"></Box>{" "}
         </Card>
-        <Card className="  sm:w-1/2 p-5 bg-white/40  flex flex-col justify-between ">
+        <Card
+        sx={{padding: "1.25rem", backgroundColor:" rgb(255, 255, 255 ,0.4)"}}
+        className="  sm:w-1/2  flex flex-col justify-between ">
           <Header
             title="Wyceń swój projekt"
             className="relative z-10"

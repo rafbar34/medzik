@@ -17,7 +17,7 @@ export const CardImage = ({
   return (
     <Card
       elevation={2}
-      className=" relative  sm:w-1/2 w-0 sm:mt-20"
+      className=" relative sm:w-1/3 w-0 sm:mt-20"
     >
       <Box className="absolute inset-0 bg-white opacity-40">
         <img
