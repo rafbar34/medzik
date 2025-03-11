@@ -20,7 +20,7 @@ export const TopBar = () => {
   }, []);
   return (
     <AppBar
-      sx={{ bgcolor: "rgba(0, 0, 0, 0.4)" }}
+      sx={{ backgroundImage: "url('/pictures/background.png')", opacity:0.75 }}
       position="fixed"
     >
       {isMobileDevice ? <TopBarMobile  pages={pages} /> : <TopBarDesktop pages={pages} />}

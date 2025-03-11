@@ -1,4 +1,5 @@
 import { Paper } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 export const WallPaperSection = () => {
@@ -20,10 +21,13 @@ export const WallPaperSection = () => {
         />
         Twoja przeglądarka nie obsługuje wideo.
       </video>
-      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/40 text-white">
-        <h1 className="text-md md:text-6xl font-bold text-center">
-          Projektujemy Twoją przyszłość
-        </h1>
+      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-black/40 text-white flex-col">
+        <Image
+          height={330}
+          width={740}
+          src="/pictures/logo2.png"
+          alt="logo"
+        />
       </div>
     </Paper>
   );

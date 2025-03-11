@@ -1,11 +1,9 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import AdbIcon from "@mui/icons-material/Adb";
-import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Link from "next/link";
+import Image from "next/image";
 
 export const TopBarDesktop = ({
   pages,
@@ -13,31 +11,13 @@ export const TopBarDesktop = ({
   pages: Array<{ url: string; title: string }>;
 }) => {
   return (
-    <Container
-      className="content-center"
-      maxWidth="xl"
-      sx={{ height: 80 }}
+    <Box
+      className="content-center px-10"
+      sx={{ height: 80, width:'100%' }}
     >
       <Toolbar disableGutters>
-        <AdbIcon sx={{ display: "flex", mr: 1 }} />
-        <Typography
-          variant="h5"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: "flex",
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          LOGOe
-        </Typography>
-
+        <Image height={30} width={140} src="/pictures/logo-topbar.png" alt="logo"/>
+        
         <Box sx={{ flexGrow: 2, display: "flex" }}>
           {pages.map((page) => (
             <Link
@@ -54,6 +34,6 @@ export const TopBarDesktop = ({
           ))}
         </Box>
       </Toolbar>
-    </Container>
+    </Box>
   );
 };
