@@ -9,7 +9,12 @@ export const MultiFileUpload = () => {
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event?.target?.files) {
-      const allowedTypes = ["image/png", "image/jpeg", "image/jpg", "application/pdf"];
+      const allowedTypes = [
+        "image/png",
+        "image/jpeg",
+        "image/jpg",
+        "application/pdf",
+      ];
       const maxSize = 5 * 1024 * 1024; // 5MB
 
       const validFiles = Array.from(event.target.files).filter(
@@ -17,7 +22,9 @@ export const MultiFileUpload = () => {
       );
 
       if (validFiles.length < event.target.files.length) {
-        alert("Niektóre pliki zostały odrzucone. Dozwolone formaty: PNG, JPG, JPEG, PDF. Maksymalny rozmiar: 5MB.");
+        alert(
+          "Niektóre pliki zostały odrzucone. Dozwolone formaty: PNG, JPG, JPEG, PDF. Maksymalny rozmiar: 5MB."
+        );
         event.target.value = "";
       }
 
@@ -31,18 +38,17 @@ export const MultiFileUpload = () => {
     setFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const sendEmail = async(e: React.FormEvent<HTMLFormElement>) => {
+  const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!formRef.current) return;
 
     const formData = new FormData(formRef.current);
     files.forEach((file) => {
-      
       formData.append("file", file);
     });
 
-     const response = await fetch('/api/send-email', {
-      method: 'POST',
+    const response = await fetch("/api/send-email", {
+      method: "POST",
       body: formData,
     });
     const data = await response.json();
@@ -50,10 +56,15 @@ export const MultiFileUpload = () => {
   };
 
   return (
-    <div className="p-4 border border-amber-500 rounded-xl shadow-sm w-full flex items-center flex-col">
-      <label className="block text-gray-700 font-medium mb-2">Dodaj pliki:</label>
+    <div className="p-4 border border-[light_color] rounded-xl shadow-sm w-full flex items-center flex-col">
+      <label className="block text-gray-700 font-medium mb-2">
+        Dodaj pliki:
+      </label>
       <Box className="w-3/4">
-        <form ref={formRef} onSubmit={sendEmail}>
+        <form
+          ref={formRef}
+          onSubmit={sendEmail}
+        >
           <TextField
             type="text"
             name="from_name"
@@ -62,7 +73,7 @@ export const MultiFileUpload = () => {
             variant="standard"
             required
             className="mb-4 bg-white w-full p-2"
-            sx={{padding:2, marginBottom:4}}
+            sx={{ padding: 2, marginBottom: 4 }}
           />
           <TextField
             type="email"
@@ -72,7 +83,7 @@ export const MultiFileUpload = () => {
             variant="standard"
             required
             className="mb-4 bg-white w-full p-2"
-            sx={{padding:2, marginBottom:4}}
+            sx={{ padding: 2, marginBottom: 4 }}
           />
           <TextField
             type="file"
@@ -80,7 +91,7 @@ export const MultiFileUpload = () => {
             name="file"
             fullWidth
             variant="standard"
-            sx={{padding:2, marginBottom:4}}
+            sx={{ padding: 2, marginBottom: 4 }}
             inputProps={{ multiple: false }}
           />
           {files.length > 0 && (
@@ -88,7 +99,10 @@ export const MultiFileUpload = () => {
               <p className="text-sm text-gray-600 mb-2">Wybrane pliki:</p>
               <ul className="space-y-2">
                 {files.map((file, index) => (
-                  <li key={index} className="flex justify-between items-center p-2 bg-gray-100 rounded-lg">
+                  <li
+                    key={index}
+                    className="flex justify-between items-center p-2 bg-gray-100 rounded-lg"
+                  >
                     <span className="text-sm">{file.name}</span>
                     <button
                       type="button"
@@ -102,7 +116,11 @@ export const MultiFileUpload = () => {
               </ul>
             </div>
           )}
-          <CustomButton title="Prześlij" width="2/5" type="submit" />
+          <CustomButton
+            title="Prześlij"
+            width="2/5"
+            type="submit"
+          />
         </form>
       </Box>
     </div>

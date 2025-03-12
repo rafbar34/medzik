@@ -20,13 +20,16 @@ export const IconsSection = () => {
     setIsMobileDevice(isMobile);
   }, []);
   return (
-    <Box className="flex  bg-[rgba(245,158,11,0.7)]  relative overflow-hidden group justify-between flex-col sm:pb-5 pt-5">
-        <Header
-          title="Gwarantujemy"
-          color={"white"}
-        />
+    <Box
+      sx={{ backgroundImage: "url('/pictures/background.png')" }}
+      className="flex   relative overflow-hidden group justify-between flex-col sm:pb-5 pt-5 opacity-80"
+    >
+      <Header
+        title="Gwarantujemy"
+        color={"white"}
+      />
 
-        <>
+      <>
         <Box className="flex sm:flex-row flex-col bg-transparent justify-evenly gap-12 sm:gap-20 flex-wrap">
           <TextIcon text="Profesjonalizm">
             <WorkspacePremiumOutlinedIcon
@@ -69,19 +72,21 @@ export const IconsSection = () => {
               <CustomButton
                 title="Skontaktuj się z nami"
                 width={"1/4"}
+                bgColor="#f59e0b"
               />
             </Link>
           </motion.div>
         )}
-        </>
+      </>
       {isMobileDevice && (
         <Link href={"/contact"}>
           <CustomButton
             title="Skontaktuj się z nami"
             width={"1/4"}
+            bgColor="#f59e0b"
           />
         </Link>
       )}
-      </Box>
+    </Box>
   );
 };

@@ -9,7 +9,7 @@ export const PricingSection = () => {
     <Box className="flex justify-center h-[900px] sm:h-[450px] ">
       <Card
         elevation={2}
-        className="sm:w-5/6 flex sm:flex-row flex-col  border-[1.5px] border-amber-500/50 rounded-lg h-[770px] sm:h-[450px]"
+        className="sm:w-5/6 flex sm:flex-row flex-col  border-[1.5px] border-[rgb(97, 97, 97)] rounded-lg h-[770px] sm:h-[450px]"
         sx={{ backgroundColor: "rgba(255, 255, 255, 0.747)" }}
       >
         <Card
@@ -49,6 +49,7 @@ export const PricingSection = () => {
                 width={"1/2"}
                 className="font-semibold"
                 title="Wycena"
+                bgColor="rgb(97, 97, 97)"
               />
             </Link>
           </Box>

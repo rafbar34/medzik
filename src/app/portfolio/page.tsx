@@ -106,8 +106,8 @@ const InfoCard = ({
   return (
     <Card
       elevation={4}
-      className="shadow-md"
-      sx={{ maxWidth: "100%", backgroundColor:"rgba(255, 255, 255, 0.062)", border:'1px solid rgba(245,10,116,0.2)' }}
+      className="shadow-md border-[1.5px] border-[light_color]"
+      sx={{ maxWidth: "100%", backgroundColor:"rgba(255, 255, 255, 0.062)" }}
     >
       <CardMedia
         sx={{ height: 250 }}
