@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
+import { Box, Button, IconButton, Toolbar } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
 import Image from "next/image";
