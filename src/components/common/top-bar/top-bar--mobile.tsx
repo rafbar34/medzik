@@ -3,6 +3,7 @@ import React from "react";
 import { Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import Link from "next/link";
+import Image from "next/image";
 
 export const TopBarMobile = ({
   pages,
@@ -23,13 +24,12 @@ export const TopBarMobile = ({
         >
           <MenuIcon />
         </IconButton>
-        <Typography
-          variant="h6"
-          color="inherit"
-          component="div"
-        >
-          Logo
-        </Typography>
+        <Image
+          height={30}
+          width={140}
+          src="/pictures/logo-topbar.png"
+          alt="logo"
+        />
       </Toolbar>
       {isFullScreenMenu && (
         <Box className="absolute h-screen bg-black/80 top-0 w-screen z-50">

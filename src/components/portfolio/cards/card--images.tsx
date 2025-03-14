@@ -24,8 +24,10 @@ export const CardImages = ({
 
   const handleClick = (
     url: undefined | string | null,
-    id: undefined | null | number
+    id: undefined | null | number,
+    type?:string
   ) => {
+    if(type !=="video" )
     setIsOpenModalData({ url, id });
   };
 
