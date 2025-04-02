@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         style={{
-          backgroundImage: "url('/pictures/tool-4.jpg')",
+          backgroundImage: "url('/pictures/mock10.jpg')",
           backgroundSize: "cover",
           backgroundAttachment: "fixed",
         }}

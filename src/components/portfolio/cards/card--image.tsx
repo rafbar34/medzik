@@ -13,7 +13,7 @@ export const CardImage = ({
     };
   }>;
 }) => {
-  if (!data[0]) return;
+  if (!data?.[0]) return <div></div>;
   return (
     <Card
       elevation={2}
@@ -26,7 +26,7 @@ export const CardImage = ({
           className="w-full min-h-[350px] h-full object-fill"
           loading="lazy"
         />
-      </Box>{" "}
+      </Box>
     </Card>
   );
 };

@@ -32,7 +32,6 @@ type CardDataType = {
 
 const PortfolioCard = () => {
   const { id } = useParams<{ id: string }>();
-
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
   const [cardData, setCardData] = React.useState<CardDataType | null>(null);
 

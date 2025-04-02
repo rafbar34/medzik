@@ -1,80 +1,95 @@
-import { Header } from "@/components/common/text/header";
-import { Box, Card, Typography } from "@mui/material";
-import React, { ReactNode } from "react";
+import { Box, Card, CardMedia, Typography } from "@mui/material";
+import Link from "next/link";
+import React from "react";
+import { ENUMS_CATEGORY } from "../../../const/enums";
 
 export const InfoSection = () => {
+  const imgArray = [
+    { src: "/pictures/categories/cat0.jpg", alt: "plytki", category: 1 },
+    { src: "/pictures/categories/cat1.png", alt: "elewacja", category: 2 },
+    { src: "/pictures/categories/cat2.jpg", alt: "szpachlowanie", category: 3 },
+    { src: "/pictures/categories/cat3.jpg", alt: "gruntowanie", category: 4 },
+    { src: "/pictures/categories/cat4.jpg", alt: "panele", category: 5 },
+  ];
+
   return (
-    <Box className="flex justify-evenly flex-col sm:flex-row">
-      <InfoSection.Card title="Dlaczego my ?">
-        <InfoSection.InfoSquare>
-          Specjalizujemy się w kompleksowych wykończeniach wnętrz, remontach
-          oraz adaptacjach mieszkań, domów i lokali użytkowych.
-        </InfoSection.InfoSquare>
-
-        <InfoSection.InfoSquare>
-          Dzięki wieloletniemu doświadczeniu oraz dbałości o każdy detal,
-          realizujemy nawet najbardziej wymagające projekty.
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Nasza misja to dostarczenie usług najwyższej jakości, które spełnią
-          oczekiwania nawet najbardziej wymagających klientów.
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Nasz zespół szczegółowo analizuje zakres prac, materiały oraz czas
-          realizacji
-        </InfoSection.InfoSquare>
-      </InfoSection.Card>
-
-      <InfoSection.Card title="Nasza oferta obejmuje:">
-        <InfoSection.InfoSquare>
-          Malowanie, szpachlowanie, tapetowanie
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Układanie płytek, paneli, parkietów
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Montaż sufitów podwieszanych i ścianek działowych
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Instalacje elektryczne i hydrauliczne
-        </InfoSection.InfoSquare>
-        <InfoSection.InfoSquare>
-          Kompleksowe remonty łazienek i kuchni{" "}
-        </InfoSection.InfoSquare>
-      </InfoSection.Card>
+    <Box className="grid px-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full">
+      {imgArray.map((details) => (
+        <CategoryCard
+          key={details.alt}
+          src={details.src}
+          alt={details.alt}
+          category={details.category}
+        />
+      ))}
     </Box>
   );
 };
 
-// eslint-disable-next-line react/display-name
-InfoSection.Card = ({
-  children,
-  title,
+const CategoryCard = ({
+  src,
+  alt,
+  category,
 }: {
-  children: ReactNode;
-  title: string;
+  src: string;
+  alt: string;
+  category: number;
 }) => {
   return (
-    <Card
-      className=" w-full sm:w-2/5 my-2 sm:my-0 p-5 h-auto sm:rounded-lg flex flex-col gap-2 justify-between shadow-xl"
-      sx={{ backgroundColor: "rgba(255, 255, 255, 0.7)" }}
-      elevation={2}
+    <Box
+      className="hover:opacity-60 duration-200 bg-black z-30"
+      sx={{ maxWidth: 670, position: "relative" }}
     >
-      <Header title={title} />
-      {children}
-    </Card>
-  );
-};
-// eslint-disable-next-line react/display-name
-InfoSection.InfoSquare = ({ children }: { children: ReactNode }) => {
-  return (
-    <Card
-      sx={{ backgroundColor: "rgba(47, 41, 41, 0.4)" }}
-      className=" w-full  p-5  rounded-lg text-white shadow-2xl"
-    >
-      <Typography sx={{ color: "white", fontWeight: "600" }}>
-        {children}
-      </Typography>
-    </Card>
+      <Link href={`/portfolio/${category}`}>
+        <Card
+          sx={{
+            height: 600,
+            backgroundColor: "black",
+            position: "relative",
+          }}
+        >
+          <Typography
+            gutterBottom
+            sx={{
+              position: "absolute",
+              width: "100%",
+              color: "white",
+              fontSize: 26,
+              padding: 1,
+              textAlign: "center",
+              zIndex: 20,
+            }}
+          >
+            {ENUMS_CATEGORY[Number(category)]}
+          </Typography>
+
+          <CardMedia
+            component="img"
+            image={src}
+            alt={alt}
+            sx={{
+              objectFit: "cover", // Zapewnia, że obrazek rozciągnie się na całą przestrzeń
+              height: "100%", // Pełna wysokość karty
+              width: "100%", // Pełna szerokość karty
+            }}
+          />
+        </Card>
+        <Box
+          className="h-full"
+          sx={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            zIndex: 10,
+          }}
+        >
+          <Box className={"hover:h-full hidden"}>
+            test
+          </Box>
+          </Box>
+      </Link>
+    </Box>
   );
 };

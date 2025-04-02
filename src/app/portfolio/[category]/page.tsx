@@ -11,33 +11,33 @@ import {
 } from "@mui/material";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { useParams } from "next/navigation";
 
-type CardsDataType = {
-  data: [
-    {
-      attributes: {
-        text1: {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          document: any;
+type CardDataType = {
+  id: string;
+  attributes: {
+    text1: {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      document: any;
+    };
+    text2: string;
+    title: string;
+    category: number;
+    images: [
+      {
+        upload_id: string;
+        alt: string;
+        custom_data: {
+          url: string | undefined;
         };
-        text2: string;
-        title: string;
-        images: [
-          {
-            upload_id: string;
-            alt: string;
-            custom_data: {
-              url: string | undefined;
-            };
-          },
-        ];
-      };
-    },
-  ];
+      },
+    ];
+  };
 };
 
 const Portfolio = () => {
-  const [cardData, setCardData] = useState<CardsDataType | null>(null);
+  const { category } = useParams();
+  const [cardData, setCardData] = useState<Array<CardDataType> | null>(null);
 
   useEffect(() => {
     const getData = async () => {
@@ -50,10 +50,16 @@ const Portfolio = () => {
           "X-Api-Version": "3",
         },
       });
-      setCardData((await res.json()) ?? []);
+      const { data } = await res.json();
+      console.log(category);
+      const filterByCategory = data?.filter(
+        (item: CardDataType) => item?.attributes.category === Number(category)
+      );
+      setCardData(filterByCategory ?? []);
     };
     getData();
-  }, []);
+  }, [category]);
+
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -64,9 +70,8 @@ const Portfolio = () => {
       }}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
-        {cardData?.data &&
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          cardData?.data.map((item: any) => {
+        {!!cardData &&
+          cardData.map((item: CardDataType) => {
             return (
               <InfoCard
                 key={item?.id}
@@ -107,7 +112,7 @@ const InfoCard = ({
     <Card
       elevation={4}
       className="shadow-md border-[1.5px] border-[light_color]"
-      sx={{ maxWidth: "100%", backgroundColor:"rgba(255, 255, 255, 0.062)" }}
+      sx={{ maxWidth: "100%", backgroundColor: "rgba(255, 255, 255, 0.062)" }}
     >
       <CardMedia
         sx={{ height: 250 }}
@@ -139,7 +144,7 @@ const InfoCard = ({
       <CardActions>
         <Link
           style={{ width: "100%" }}
-          href={`/portfolio/${id}`}
+          href={`/portfolio/category/${id}`}
         >
           <CustomButton
             width={"1/2"}
