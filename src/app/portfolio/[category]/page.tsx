@@ -7,11 +7,13 @@ import {
   CardActions,
   CardContent,
   CardMedia,
+  CircularProgress,
   Typography,
 } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import { useDetectCurrentComponent } from "@/hooks/useDetectCurrentComponent";
 
 type CardDataType = {
   id: string;
@@ -38,9 +40,13 @@ type CardDataType = {
 const Portfolio = () => {
   const { category } = useParams();
   const [cardData, setCardData] = useState<Array<CardDataType> | null>(null);
+  const [loading, setIsLoading] = useState(true);
+  const ref = useRef(null);
+  const isVisible = useDetectCurrentComponent(ref, loading);
 
   useEffect(() => {
     const getData = async () => {
+      setIsLoading(true);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}`, {
         method: "GET",
         headers: {
@@ -51,15 +57,30 @@ const Portfolio = () => {
         },
       });
       const { data } = await res.json();
-      console.log(category);
       const filterByCategory = data?.filter(
         (item: CardDataType) => item?.attributes.category === Number(category)
       );
       setCardData(filterByCategory ?? []);
+      setIsLoading(false);
     };
     getData();
   }, [category]);
 
+  if (loading)
+    return (
+      <Box
+        className={
+          " pb-20 gap-20 flex flex-col h-full min-h-screen pt-20 items-center justify-center"
+        }
+        sx={{
+          backgroundImage: "url('/pictures/mock7.jpg')",
+          backgroundSize: "cover",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <CircularProgress />
+      </Box>
+    );
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -69,7 +90,10 @@ const Portfolio = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10">
+      <div
+        ref={ref}
+        className={`transition-all ${isVisible ? "fadeDown appear" : "opacity-0"} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10`}
+      >
         {!!cardData &&
           cardData.map((item: CardDataType) => {
             return (

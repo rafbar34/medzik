@@ -1,12 +1,20 @@
+"use client";
+
+import React, { useRef } from "react";
 import { CustomButton } from "@/components/common/button/button";
 import { Header } from "@/components/common/text/header";
+import { useDetectCurrentComponent } from "@/hooks/useDetectCurrentComponent";
 import { Box, Card, Typography } from "@mui/material";
 import Link from "next/link";
-import React from "react";
 
 export const PricingSection = () => {
+  const ref = useRef(null);
+  const isVisible = useDetectCurrentComponent(ref, false);
   return (
-    <Box className="flex justify-center h-[900px] sm:h-[450px] ">
+    <Box
+      ref={ref}
+      className={` transition-all ${isVisible ? "fadeDown appear" : "opacity-0"} flex justify-center h-[900px] sm:h-[450px] `}
+    >
       <Card
         elevation={2}
         className="sm:w-5/6 flex sm:flex-row flex-col  border-[1.5px] border-[rgb(97, 97, 97)] rounded-lg h-[770px] sm:h-[450px]"
@@ -24,8 +32,12 @@ export const PricingSection = () => {
           <Box className="absolute inset-0 bg-white opacity-60"></Box>{" "}
         </Card>
         <Card
-        sx={{padding: "1.25rem", backgroundColor:" rgb(255, 255, 255 ,0.4)"}}
-        className="  sm:w-1/2  flex flex-col justify-between ">
+          sx={{
+            padding: "1.25rem",
+            backgroundColor: " rgb(255, 255, 255 ,0.4)",
+          }}
+          className="  sm:w-1/2  flex flex-col justify-between "
+        >
           <Header
             title="Wyceń swój projekt"
             className="relative z-10"

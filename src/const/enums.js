@@ -3,5 +3,5 @@ export const ENUMS_CATEGORY = {
   2: "Elewacja",
   3: "Szpachlowanie",
   4: "Gruntowanie",
-  5: "Panele",
+  5: "Podłoga",
 };
