@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 export const useDetectCurrentComponent = (
   ref: React.RefObject<HTMLElement | null>,
-  loading: boolean
+  loading: boolean,
+  threshold: number = 0.2
 ) => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -15,7 +16,7 @@ export const useDetectCurrentComponent = (
         });
       },
       {
-        threshold: 0.2,
+        threshold: threshold,
       }
     );
 

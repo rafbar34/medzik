@@ -10,10 +10,10 @@ import {
   CircularProgress,
   Typography,
 } from "@mui/material";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { useDetectCurrentComponent } from "@/hooks/useDetectCurrentComponent";
+import { ENUMS_CATEGORY } from "@/const/enums";
 
 type CardDataType = {
   id: string;
@@ -40,9 +40,10 @@ type CardDataType = {
 const Portfolio = () => {
   const { category } = useParams();
   const [cardData, setCardData] = useState<Array<CardDataType> | null>(null);
+  const [categoriesData, setCategoriesData] = useState<
+    number[] | unknown[] | null
+  >(null);
   const [loading, setIsLoading] = useState(true);
-  const ref = useRef(null);
-  const isVisible = useDetectCurrentComponent(ref, loading);
 
   useEffect(() => {
     const getData = async () => {
@@ -57,10 +58,23 @@ const Portfolio = () => {
         },
       });
       const { data } = await res.json();
-      const filterByCategory = data?.filter(
-        (item: CardDataType) => item?.attributes.category === Number(category)
-      );
-      setCardData(filterByCategory ?? []);
+      console.log(data);
+      if (Number(category) === 0) {
+        setCardData(data ?? []);
+        const getAvailableCategories = data.map(
+          (item: CardDataType) => item?.attributes.category
+        );
+        setCategoriesData([...new Set(getAvailableCategories)]);
+      } else {
+        const filterByCategory = data?.filter(
+          (item: CardDataType) => item?.attributes.category === Number(category)
+        );
+        setCardData(filterByCategory ?? []);
+        const getAvailableCategories = filterByCategory.map(
+          (item: CardDataType) => item?.attributes.category
+        );
+        setCategoriesData([...new Set(getAvailableCategories)]);
+      }
       setIsLoading(false);
     };
     getData();
@@ -81,6 +95,7 @@ const Portfolio = () => {
         <CircularProgress />
       </Box>
     );
+  console.log(categoriesData);
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -90,21 +105,37 @@ const Portfolio = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      <div
-        ref={ref}
-        className={`transition-all ${isVisible ? "fadeDown appear" : "opacity-0"} grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-10`}
-      >
-        {!!cardData &&
-          cardData.map((item: CardDataType) => {
-            return (
-              <InfoCard
-                key={item?.id}
-                id={item?.id}
-                item={item?.attributes}
-              />
-            );
-          })}
-      </div>
+      {!!categoriesData &&
+        categoriesData.map((category, index) => {
+          return (
+            <Box
+              className={"flex flex-col w-full"}
+              key={index}
+            >
+              <Box className="w-full border-b-2">
+                <Typography className="text-center py-5 text-4xl font-bold font-sans">
+                  {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}
+                </Typography>
+              </Box>
+              <div
+                className={`transition-all fadeDown appear grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-10`}
+              >
+                {!!cardData &&
+                  cardData.map((item: CardDataType) => {
+                    if (item?.attributes?.category === category) {
+                      return (
+                        <InfoCard
+                          key={item?.id}
+                          id={item?.id}
+                          item={item?.attributes}
+                        />
+                      );
+                    }
+                  })}
+              </div>
+            </Box>
+          );
+        })}
     </Box>
   );
 };
