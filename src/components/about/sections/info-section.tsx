@@ -14,7 +14,7 @@ export const InfoSection = () => {
 
   return (
     <Box
-      className={`transition-all ${isVisible ? "fadeDown appear" : "opacity-0"} grid px-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full`}
+      className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full`}
       ref={ref}
     >
       {CATEGORY_ARRAY.map((details) => (
@@ -77,7 +77,6 @@ const CategoryCard = ({
           }}
         />
 
-        {/* Overlay */}
         <Box
           className="h-full bg-[rgba(0,0,0,0.4)] group-hover:bg-[rgba(0,0,0,0.1)] duration-200"
           sx={{
@@ -104,9 +103,10 @@ const CategoryCard = ({
             <Typography
               variant="body1"
               sx={{
-                color: "rgba(255, 255, 255, 0.774)",
+                color: "rgba(255, 255, 255, 0.878)",
                 fontSize: 19,
                 textAlign: "justify",
+                fontWeight:'600'
               }}
             >
               {desc}

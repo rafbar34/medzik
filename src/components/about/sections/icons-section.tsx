@@ -61,7 +61,7 @@ export const IconsSection = () => {
     <Box
       ref={ref}
       sx={{ backgroundImage: "url('/pictures/background.png')" }}
-      className="flex   relative overflow-hidden group justify-between flex-col sm:pb-5 pt-2 opacity-80"
+      className="flex relative overflow-hidden group justify-between flex-col sm:pb-5 pt-2 opacity-80"
     >
       <Header
         title="Gwarantujemy"
@@ -73,7 +73,7 @@ export const IconsSection = () => {
           {ICONS_ARRAY.map(({ text, Component }) => (
             <Box
               key={text}
-              className={`transition-all ${isVisible ? "fadeDown appear" : "opacity-0"}`}
+              className={`transition-all ${isVisible ? "appear" : "opacity-0"}`}
             >
               <TextIcon text={text}>{Component}</TextIcon>
             </Box>

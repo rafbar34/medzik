@@ -13,7 +13,7 @@ export const PricingSection = () => {
   return (
     <Box
       ref={ref}
-      className={` transition-all ${isVisible ? "fadeDown appear" : "opacity-0"} flex justify-center h-[900px] sm:h-[450px] `}
+      className={` transition-all ${isVisible ? "fadeDown" : "opacity-0"} flex justify-center h-[900px] sm:h-[450px] `}
     >
       <Card
         elevation={2}

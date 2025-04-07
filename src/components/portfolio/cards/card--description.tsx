@@ -1,3 +1,4 @@
+"use client";
 import { Header } from "@/components/common/text/header";
 import { Box, Card, Typography } from "@mui/material";
 import React, { ReactNode } from "react";
@@ -11,10 +12,11 @@ export const CardDescription = ({
   text2: string;
   title: string;
 }) => {
+
   return (
     <Card
       className=" w-full  sm:w-2/3 pt-3  rounded-lg min-h-[28rem] sm:mt-20"
-      sx={{backgroundColor:'rgba(255,255,255,0.4)'}}
+      sx={{ backgroundColor: "rgba(255,255,255,0.4)" }}
       elevation={2}
     >
       <Box className="px-5">
@@ -35,7 +37,10 @@ export const CardDescription = ({
           component="div"
           className="font-medium"
         >
-          <div style={{textWrap:"wrap", wordBreak:'break-word'}} dangerouslySetInnerHTML={{ __html: text2 }} />
+          <div
+            style={{ textWrap: "wrap", wordBreak: "break-word" }}
+            dangerouslySetInnerHTML={{ __html: text2 }}
+          />
         </Typography>
       </Card>
     </Card>

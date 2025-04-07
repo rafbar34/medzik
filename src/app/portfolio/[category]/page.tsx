@@ -58,7 +58,7 @@ const Portfolio = () => {
         },
       });
       const { data } = await res.json();
-      console.log(data);
+
       if (Number(category) === 0) {
         setCardData(data ?? []);
         const getAvailableCategories = data.map(
@@ -75,6 +75,7 @@ const Portfolio = () => {
         );
         setCategoriesData([...new Set(getAvailableCategories)]);
       }
+      
       setIsLoading(false);
     };
     getData();
@@ -95,7 +96,7 @@ const Portfolio = () => {
         <CircularProgress />
       </Box>
     );
-  console.log(categoriesData);
+
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -113,12 +114,12 @@ const Portfolio = () => {
               key={index}
             >
               <Box className="w-full border-b-2">
-                <Typography className="text-center py-5 text-4xl font-bold font-sans">
+                <Typography  className="text-center py-5 text-4xl font-bold">
                   {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}
                 </Typography>
               </Box>
               <div
-                className={`transition-all fadeDown appear grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-10`}
+                className={`transition-all fadeDown grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-10`}
               >
                 {!!cardData &&
                   cardData.map((item: CardDataType) => {

@@ -12,25 +12,33 @@ export const TopBarDesktop = ({
 }) => {
   return (
     <Box
-      className="content-center px-10"
-      sx={{ height: 80, width:'100%' }}
+      className="content-center px-10 flex"
+      sx={{ height: 80, width: "100%" }}
     >
       <Toolbar disableGutters>
-        <Image height={30} width={140} src="/pictures/logo-topbar.png" alt="logo"/>
-        
+        <Link href={"/"}>
+          <Image
+            height={30}
+            width={140}
+            src="/pictures/logo2.png"
+            alt="logo"
+          />
+        </Link>
         <Box sx={{ flexGrow: 2, display: "flex" }}>
           {pages.map((page) => (
-            <Link
+            <Box
               key={page.url}
-              href={`${page.url}`}
+              className="hover:bg-[rgba(0,0,0,0.4)]"
             >
-              <Button
-                sx={{ my: 2, color: "white", display: "block", mx: 2 }}
-                size="large"
-              >
-                {page.title}
-              </Button>
-            </Link>
+              <Link href={`${page.url}`}>
+                <Button
+                  sx={{ my: 2, color: "white", display: "block", mx: 2, fontSize:16}}
+                  size="large"
+                >
+                  {page.title}
+                </Button>
+              </Link>
+            </Box>
           ))}
         </Box>
       </Toolbar>

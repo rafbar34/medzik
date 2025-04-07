@@ -6,7 +6,6 @@ import { isMobile } from "react-device-detect";
 import { TopBarMobile } from "./top-bar--mobile";
 import { TopBarDesktop } from "./top-bar--desktop";
 const pages = [
-  { url: "/", title: "Strona główna" },
   { url: "/portfolio/0", title: "Projekty" },
   { url: "/pricing", title: "Wycena" },
   { url: "/contact", title: "Kontakt" },

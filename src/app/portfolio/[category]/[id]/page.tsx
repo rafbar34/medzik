@@ -2,8 +2,8 @@
 import { CardDescription } from "@/components/portfolio/cards/card--description";
 import { CardImage } from "@/components/portfolio/cards/card--image";
 import { CardImages } from "@/components/portfolio/cards/card--images";
-import { Box } from "@mui/material";
-import React from "react";
+import { Box, CircularProgress } from "@mui/material";
+import React, { useRef, useState } from "react";
 import { isMobile } from "react-device-detect";
 import { useParams } from "next/navigation";
 
@@ -23,7 +23,6 @@ type CardDataType = {
           custom_data: {
             url: string | undefined;
           };
-
         },
       ];
     };
@@ -33,10 +32,13 @@ type CardDataType = {
 const PortfolioCard = () => {
   const { id } = useParams<{ id: string }>();
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
+  const [loading, setLoading] = useState(true);
   const [cardData, setCardData] = React.useState<CardDataType | null>(null);
+  const ref = useRef(null);
 
   React.useEffect(() => {
     const getData = async () => {
+      setLoading(true);
       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/${id}`, {
         method: "GET",
         headers: {
@@ -47,6 +49,7 @@ const PortfolioCard = () => {
         },
       });
       setCardData((await res.json()) ?? []);
+      setLoading(false);
     };
     getData();
   }, []);
@@ -54,17 +57,25 @@ const PortfolioCard = () => {
   React.useEffect(() => {
     setIsMobileDevice(isMobile);
   }, []);
-  if (!cardData?.data) return;
+
+  if (loading || !cardData?.data)
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <CircularProgress />
+      </div>
+    );
+
   return (
     <Box
+      ref={ref}
       sx={{
         backgroundImage: "url('/pictures/mock7.jpg')",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
       }}
-      className="sm:p-10 pt-20"
+      className={`sm:p-10 pt-20`}
     >
-      <Box className="flex sm:flex-row flex-col justify-evenly h-full sm:min-w-[900px]">
+      <Box className="flex sm:flex-row flex-col justify-evenly h-full sm:min-w-[900px] transition-all appear">
         <CardDescription
           title={cardData?.data?.attributes?.title}
           text1={

@@ -27,7 +27,7 @@ export const TopBarMobile = ({
         <Image
           height={30}
           width={140}
-          src="/pictures/logo-topbar.png"
+          src="/pictures/logo2.png"
           alt="logo"
         />
       </Toolbar>
