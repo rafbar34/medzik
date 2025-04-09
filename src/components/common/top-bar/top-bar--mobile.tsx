@@ -24,17 +24,20 @@ export const TopBarMobile = ({
         >
           <MenuIcon />
         </IconButton>
-        <Image
-          height={30}
-          width={140}
-          src="/pictures/logo2.png"
-          alt="logo"
-        />
       </Toolbar>
       {isFullScreenMenu && (
         <Box className="absolute h-screen bg-black/80 top-0 w-screen z-50">
           <Box className="flex justify-center items-center h-full w-full">
-            <Box className="flex flex-col h-full gap-10 justify-center items-center">
+            <Box className="flex flex-col h-full gap-5  items-center">
+              <Link href={`/`}>
+                <Image
+                  onClick={() => setIsFullScreenMenu(false)}
+                  height={30}
+                  width={200}
+                  src="/pictures/logo2.png"
+                  alt="logo"
+                />
+              </Link>
               {pages.map((page) => (
                 <Link
                   key={page.url}
@@ -44,6 +47,7 @@ export const TopBarMobile = ({
                     sx={{ my: 2, color: "white", display: "block", mx: 2 }}
                     size="large"
                     className="text-2xl"
+                    onClick={() => setIsFullScreenMenu(false)}
                   >
                     {page.title}
                   </Button>

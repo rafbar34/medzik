@@ -14,7 +14,7 @@ export const InfoSection = () => {
 
   return (
     <Box
-      className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-20 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 justify-items-center w-full`}
+      className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
       ref={ref}
     >
       {CATEGORY_ARRAY.map((details) => (
@@ -47,7 +47,7 @@ const CategoryCard = ({
         backgroundColor: "black",
         position: "relative",
         overflow: "hidden",
-        maxWidth: 650,
+        maxWidth: 600,
       }}
     >
       <Link href={`/portfolio/${category}`}>
@@ -104,9 +104,8 @@ const CategoryCard = ({
               variant="body1"
               sx={{
                 color: "rgba(255, 255, 255, 0.878)",
-                fontSize: 19,
+                fontSize: 18,
                 textAlign: "justify",
-                fontWeight:'600'
               }}
             >
               {desc}

@@ -75,7 +75,6 @@ const Portfolio = () => {
         );
         setCategoriesData([...new Set(getAvailableCategories)]);
       }
-      
       setIsLoading(false);
     };
     getData();
@@ -114,7 +113,15 @@ const Portfolio = () => {
               key={index}
             >
               <Box className="w-full border-b-2">
-                <Typography  className="text-center py-5 text-4xl font-bold">
+                <Typography
+                  sx={{
+                    fontSize: "2.25rem",
+                    textAlign: "center",
+                    paddingTop: "1.25rem",
+                    paddingBottom: "1.25rem",
+                    fontWeight:'bold'
+                  }}
+                >
                   {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}
                 </Typography>
               </Box>

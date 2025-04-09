@@ -15,7 +15,7 @@ export const CardDescription = ({
 
   return (
     <Card
-      className=" w-full  sm:w-2/3 pt-3  rounded-lg min-h-[28rem] sm:mt-20"
+      className=" w-full  sm:w-[75%] pt-3 rounded-l-lg h-full sm:min-h-[28rem] sm:mt-20"
       sx={{ backgroundColor: "rgba(255,255,255,0.4)" }}
       elevation={2}
     >

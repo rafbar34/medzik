@@ -17,6 +17,7 @@ export const TopBar = () => {
   React.useEffect(() => {
     setIsMobileDevice(isMobile);
   }, []);
+  console.log(isMobileDevice)
   return (
     <AppBar
       sx={{ backgroundImage: "url('/pictures/background.png')", opacity:0.75 }}

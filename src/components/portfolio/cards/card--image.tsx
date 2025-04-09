@@ -17,13 +17,20 @@ export const CardImage = ({
   return (
     <Card
       elevation={2}
-      className=" relative sm:w-1/3 w-0 sm:mt-20"
+      sx={{
+        position: 'relative',
+        width: { xs: "50%", sm: '25%' },
+        borderTopRightRadius: '0.5rem',
+        borderBottomRightRadius: '0.5rem',
+        marginTop: { sm: '5rem' }
+      }}
+
     >
       <Box className="absolute inset-0 bg-white opacity-40">
         <img
           src={data[0]?.custom_data?.url}
           alt={"bg photo"}
-          className="w-full min-h-[350px] h-full object-fill"
+          className="w-full min-h-[450px] h-full object-cover"
           loading="lazy"
         />
       </Box>
