@@ -14,11 +14,11 @@ export const Header = ({
 }) => {
   return (
     <Typography
-      sx={{ textAlign: textAlign, marginBottom: 2, marginTop: 2, color: color }}
+      sx={{ textAlign: textAlign, marginBottom: 2, marginTop: 2, color: color, fontSize:"2.5rem" }}
       variant="h4"
       className={className}
     >
-      {title}
+     <strong>{title}</strong>
     </Typography>
   );
 };

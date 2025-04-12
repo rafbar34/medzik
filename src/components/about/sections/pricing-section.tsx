@@ -13,11 +13,11 @@ export const PricingSection = () => {
   return (
     <Box
       ref={ref}
-      className={` transition-all ${isVisible ? "fadeDown" : "opacity-0"} flex justify-center h-[900px] sm:h-[450px] `}
+      className={` transition-all ${isVisible ? "fadeDown" : "opacity-0"} flex justify-center h-[900px] sm:h-[450px]  sm:px-5 `}
     >
       <Card
         elevation={2}
-        className="sm:w-full sm:px-5 flex sm:flex-row flex-col  border-[1.5px] border-[rgb(97, 97, 97)] rounded-lg h-[770px] sm:h-[450px]"
+        className="sm:w-full flex sm:flex-row flex-col  border-[1.5px] border-[rgb(97, 97, 97)] rounded-lg h-[770px] sm:h-[450px]"
         sx={{ backgroundColor: "rgba(255, 255, 255, 0.747)" }}
       >
         <Card

@@ -7,22 +7,26 @@ import { ENUMS_CATEGORY } from "../../../const/enums";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useDetectCurrentComponent } from "@/hooks/useDetectCurrentComponent";
 import { CATEGORY_ARRAY } from "../../../const/category";
+import { Header } from "@/components/common/text/header";
 
 export const InfoSection = () => {
   const ref = useRef(null);
   const isVisible = useDetectCurrentComponent(ref, false);
 
   return (
-    <Box
-      className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
-      ref={ref}
-    >
-      {CATEGORY_ARRAY.map((details) => (
-        <CategoryCard
-          {...details}
-          key={details.alt}
-        />
-      ))}
+    <Box>
+      <Header className="mb-16 text-[3rem] mt-[-10px]" title="Nasza oferta" />
+      <Box
+        className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
+        ref={ref}
+      >
+        {CATEGORY_ARRAY.map((details) => (
+          <CategoryCard
+            {...details}
+            key={details.alt}
+          />
+        ))}
+      </Box>
     </Box>
   );
 };
@@ -47,7 +51,7 @@ const CategoryCard = ({
         backgroundColor: "black",
         position: "relative",
         overflow: "hidden",
-        maxWidth: 600,
+        maxWidth: 750,
       }}
     >
       <Link href={`/portfolio/${category}`}>

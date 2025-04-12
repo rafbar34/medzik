@@ -12,7 +12,6 @@ export const CardDescription = ({
   text2: string;
   title: string;
 }) => {
-
   return (
     <Card
       className=" w-full  sm:w-[75%] pt-3 rounded-l-lg h-full sm:min-h-[28rem] sm:mt-20"
@@ -25,17 +24,19 @@ export const CardDescription = ({
           textAlign="left"
           className="text-[#f5970b]"
         />
-        <CardDescription.Description>{text1}</CardDescription.Description>
+        <CardDescription.Description>
+          {text1}
+        </CardDescription.Description>
         <br />
       </Box>
 
       <Card
         elevation={2}
-        className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)]  border-t-2 h-full flex"
+        className="shadow-lg p-5 border-t-[rgba(245,159,11,0.23)]  border-t-2 h-full sm:min-h-[20rem] sm:max-h-[25rem] flex"
       >
         <Typography
           component="div"
-          className="font-medium"
+          className="font-medium overflow-y-auto"
         >
           <div
             style={{ textWrap: "wrap", wordBreak: "break-word" }}
@@ -50,7 +51,7 @@ export const CardDescription = ({
 CardDescription.Description = ({ children }: { children: ReactNode }) => {
   return (
     <Typography
-      className="text-justify "
+      className="text-justify overflow-y-auto max-h-[10rem] break-words min-h-6"
       sx={{ fontSize: 18 }}
       variant="body1"
     >

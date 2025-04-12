@@ -3,9 +3,22 @@ import { Box, TextField } from "@mui/material";
 import { useRef, useState } from "react";
 import { CustomButton } from "../common/button/button";
 
+
+
+
 export const MultiFileUpload = () => {
   const [files, setFiles] = useState<File[]>([]);
   const formRef = useRef<HTMLFormElement>(null); // Referencja do formularza
+
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState(false);
+
+  const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    const phoneRegex = /^[0-9]{9,12}$/;
+    setPhone(value);
+    setError(!phoneRegex.test(value));
+  };
 
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     if (event?.target?.files) {
@@ -39,6 +52,9 @@ export const MultiFileUpload = () => {
   };
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
+    if(error) return alert("Błąd w formularzu");
+    if(!files.length) return alert("Dodaj Pliki");
+
     e.preventDefault();
     if (!formRef.current) return;
 
@@ -72,6 +88,9 @@ export const MultiFileUpload = () => {
             fullWidth
             variant="standard"
             required
+            inputProps={{ maxLength: 20,
+
+             }}
             className="mb-4 bg-white w-full p-2"
             sx={{ padding: 2, marginBottom: 4 }}
           />
@@ -82,6 +101,22 @@ export const MultiFileUpload = () => {
             fullWidth
             variant="standard"
             required
+            inputProps={{ maxLength: 30 }}
+            className="mb-4 bg-white w-full p-2"
+            sx={{ padding: 2, marginBottom: 4 }}
+          />
+          <TextField
+            type="tel"
+            name="from_phone"
+            placeholder="Twój numer telefonu"
+            fullWidth
+            variant="standard"
+            required
+            inputProps={{ maxLength: 12 }}
+            value={phone}
+            onChange={handleChange}
+            error={error}
+            helperText={error ? "Wprowadź poprawny numer" : ""}
             className="mb-4 bg-white w-full p-2"
             sx={{ padding: 2, marginBottom: 4 }}
           />
