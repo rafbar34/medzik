@@ -67,7 +67,6 @@ export const IconsSection = () => {
         title="Gwarantujemy"
         color={"white"}
       />
-
       <>
         <Box className="flex sm:flex-row flex-col bg-transparent justify-evenly gap-12 sm:gap-20 flex-wrap">
           {ICONS_ARRAY.map(({ text, Component }) => (

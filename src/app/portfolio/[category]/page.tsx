@@ -109,7 +109,9 @@ const Portfolio = () => {
         categoriesData.map((category, index) => {
           return (
             <Box
-              className={"flex flex-col w-full shadow-[0_0_15px_rgba(0,0,0,0.15)]"}
+              className={
+                "flex flex-col w-full shadow-[0_0_15px_rgba(0,0,0,0.15)]"
+              }
               key={index}
             >
               <Box className="w-full border-b-4">
@@ -119,7 +121,7 @@ const Portfolio = () => {
                     textAlign: "center",
                     paddingTop: "1.25rem",
                     paddingBottom: "1.25rem",
-                    fontWeight:'bold'
+                    fontWeight: "bold",
                   }}
                 >
                   {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}

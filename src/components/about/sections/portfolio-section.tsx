@@ -7,25 +7,27 @@ import React from "react";
 import { isMobile } from "react-device-detect";
 
 type CardDataType = {
-  data: [{
-    attributes: {
-      text1: {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        document: any;
+  data: [
+    {
+      attributes: {
+        text1: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          document: any;
+        };
+        text2: string;
+        title: string;
+        images: [
+          {
+            upload_id: string;
+            alt: string;
+            custom_data: {
+              url: string | undefined;
+            };
+          },
+        ];
       };
-      text2: string;
-      title: string;
-      images: [
-        {
-          upload_id: string;
-          alt: string;
-          custom_data: {
-            url: string | undefined;
-          };
-        },
-      ];
-    };
-  }];
+    },
+  ];
 };
 const PortfolioDemoSection = () => {
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
