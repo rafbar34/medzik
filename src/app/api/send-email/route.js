@@ -14,14 +14,18 @@ export async function POST(req) {
   const files = formData.getAll("file");
   const name = formData.get("from_name");
   const email = formData.get("from_email");
+  const tel = formData.get("from_phone");
+
   if (!files || files.length === 0) {
     return NextResponse.json({ message: "Nie przesłano żadnego pliku." });
   }
+
   if (files && files.length > 15) {
     return NextResponse.json({
       message: "Przekroczono maksymalna liczbe plikow",
     });
   }
+
   let arrayFiles = [];
 
   for (const file of files) {
@@ -40,7 +44,6 @@ export async function POST(req) {
     });
   }
 
-  // Przykład wysyłania e-maila z plikiem w '/tmp'
   const transporter = nodemailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
@@ -55,8 +58,8 @@ export async function POST(req) {
   const mailOptions = {
     from: process.env.NEXT_PUBLIC_EMAIL_USER,
     to: process.env.NEXT_PUBLIC_EMAIL_USER, // Adres docelowy
-    subject: "Załącznik z formularza",
-    text: `Wiadomość z załącznikiem od Imie:${name} / email:${email}
+    subject: `Oferta ${email}`,
+    text: `Wiadomość z załącznikiem od Imie:${name} / email:${email} / numer:${tel}
   
   `,
     attachments: arrayFiles,
