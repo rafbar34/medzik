@@ -15,7 +15,7 @@ export const InfoSection = () => {
 
   return (
     <Box>
-      <Header className="mb-16 text-[3rem] mt-[-10px]" title="Nasza oferta" />
+      <Header className="mb-16 text-[3rem] mt-[-10px]" title="Nasza oferta" variant="h1" />
       <Box
         className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
         ref={ref}

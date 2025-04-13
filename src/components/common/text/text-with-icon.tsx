@@ -16,7 +16,7 @@ export const TextIcon = ({
         variant="body1"
         color={"white"}
       >
-        {text}
+       <strong>{text}</strong>
       </Typography>
     </Box>
   );
