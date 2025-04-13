@@ -109,10 +109,10 @@ const Portfolio = () => {
         categoriesData.map((category, index) => {
           return (
             <Box
-              className={"flex flex-col w-full"}
+              className={"flex flex-col w-full shadow-[0_0_15px_rgba(0,0,0,0.15)]"}
               key={index}
             >
-              <Box className="w-full border-b-2">
+              <Box className="w-full border-b-4">
                 <Typography
                   sx={{
                     fontSize: "2.25rem",
@@ -126,7 +126,7 @@ const Portfolio = () => {
                 </Typography>
               </Box>
               <div
-                className={`transition-all fadeDown grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 p-10`}
+                className={`transition-all fadeDown grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 p-10`}
               >
                 {!!cardData &&
                   cardData.map((item: CardDataType) => {
@@ -174,7 +174,7 @@ const InfoCard = ({
   return (
     <Card
       elevation={4}
-      className="shadow-md border-[1.5px] border-[light_color]"
+      className="shadow-md border-[1.5px] border-[light_color] max-w-[450px]"
       sx={{ maxWidth: "100%", backgroundColor: "rgba(255, 255, 255, 0.062)" }}
     >
       <CardMedia
