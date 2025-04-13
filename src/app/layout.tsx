@@ -14,7 +14,16 @@ export const metadata: Metadata = {
     icon: "/logo-favicon.svg", 
     apple: "/logo-favicon.svg",
   },
+  openGraph: {
+    title: "LookRem – Profesjonalne Usługi Remontowe",
+    description: "Profesjonalne usługi remontowe – kompleksowe remonty mieszkań, domów i biur.",
+    url: "https://lookme-gold.vercel.app/",
+    type: "website",
+
+    locale: "pl_PL"
+  },
 };
+
 
 export default function RootLayout({
   children,
