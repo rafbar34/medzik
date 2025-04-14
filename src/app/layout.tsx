@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "LookRem – Profesjonalne Usługi Remontowe",
     description: "Profesjonalne usługi remontowe – kompleksowe remonty mieszkań, domów i biur.",
-    url: "https://lookme-gold.vercel.app/",
+    url: "https://lookrem.pl/",
     type: "website",
 
     locale: "pl_PL"

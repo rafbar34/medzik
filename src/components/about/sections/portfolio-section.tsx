@@ -51,7 +51,6 @@ const PortfolioDemoSection = () => {
     };
     getData();
   }, []);
-  console.log(cardData);
   React.useEffect(() => {
     setIsMobileDevice(isMobile);
   }, []);

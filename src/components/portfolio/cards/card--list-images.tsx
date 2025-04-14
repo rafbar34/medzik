@@ -113,7 +113,7 @@ const DesktopImageListItem = ({
           alt={item.alt}
           loading="lazy"
          
-          style={{ width:'80vw', height:'80vh'}}
+          style={{ width:'75vw', height:'95vh'}}
         />
       </Modal>
     </>

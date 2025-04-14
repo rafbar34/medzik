@@ -95,7 +95,6 @@ const Portfolio = () => {
         <CircularProgress />
       </Box>
     );
-
   return (
     <Box
       className={" pb-20 gap-20 flex flex-col h-full min-h-screen pt-20"}
@@ -105,7 +104,7 @@ const Portfolio = () => {
         backgroundAttachment: "fixed",
       }}
     >
-      {!!categoriesData &&
+      {!!categoriesData && categoriesData?.length !== 0 ? (
         categoriesData.map((category, index) => {
           return (
             <Box
@@ -145,7 +144,12 @@ const Portfolio = () => {
               </div>
             </Box>
           );
-        })}
+        })
+      ) : (
+        <div className="flex justify-center items-center mt-20">
+          <h1 className="text-3xl font-bold">Brak danych</h1>
+        </div>
+      )}
     </Box>
   );
 };
