@@ -8,10 +8,16 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { useDetectCurrentComponent } from "@/hooks/useDetectCurrentComponent";
 import { CATEGORY_ARRAY } from "../../../const/category";
 import { Header } from "@/components/common/text/header";
+import { isMobile } from "react-device-detect";
 
 export const InfoSection = () => {
   const ref = useRef(null);
   const isVisible = useDetectCurrentComponent(ref, false);
+  const [isMobileDevice, setIsMobileDevice] = React.useState(false);
+  
+    React.useEffect(() => {
+      setIsMobileDevice(isMobile);
+    }, []);
   return (
     <Box>
       <Header
@@ -20,7 +26,7 @@ export const InfoSection = () => {
         variant="h1"
       />
       <Box
-        className={`transition-all ${isVisible ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
+        className={`transition-all ${isVisible || isMobileDevice ? "fadeDown" : "opacity-0"} grid px-5 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6 justify-items-center w-full`}
         ref={ref}
       >
         {CATEGORY_ARRAY.map((details) => (
