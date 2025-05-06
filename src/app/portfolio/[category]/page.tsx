@@ -147,7 +147,12 @@ const Portfolio = () => {
         })
       ) : (
         <div className="flex justify-center items-center mt-20">
-          <h1 className="text-3xl font-bold">Brak danych</h1>
+          <h1
+            style={{ color: "black" }}
+            className="text-3xl font-bold"
+          >
+            Brak danych
+          </h1>
         </div>
       )}
     </Box>
