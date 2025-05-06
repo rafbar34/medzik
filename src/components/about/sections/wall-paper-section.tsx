@@ -3,7 +3,7 @@ import React from "react";
 
 export const WallPaperSection = () => {
   return (
-<Paper elevation={0} className="relative mt-20 min-h-[250px] sm:w-full sm:min-h-screen sm:mt-0  w-full">
+<Paper elevation={0} className="relative mt-14 min-h-[270px] sm:w-full sm:min-h-screen sm:mt-0  w-full">
   <video
     className="absolute inset-0 w-full h-full object-cover"
     autoPlay
