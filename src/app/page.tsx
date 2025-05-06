@@ -9,8 +9,8 @@ const About = () => {
   return (
     <Box className={"bg-white/30 pb-20 gap-20 flex flex-col"}>
       <WallPaperSection />
-      <IconsSection />
       <InfoSection />
+      <IconsSection />
       <PricingSection />
     </Box>
   );
