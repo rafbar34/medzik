@@ -1,7 +1,9 @@
 export const ENUMS_CATEGORY = {
-  1: "Glazurowanie",
-  2: "Elewacja",
+  1: "Glazurnictwo",
+  2: "Malowanie",
   3: "Szpachlowanie",
-  4: "Gruntowanie",
-  5: "Podłoga",
+  4: "Montaż podłóg",
+  5: "Montaż GK (gips-kartonów)",
+  6: "Przeróbki elektryczne i hydrauliczne",
+  7: "Prace ogólno budowlane",
 };

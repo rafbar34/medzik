@@ -42,9 +42,7 @@ const Pricing = () => {
             kluczowych dokumentów:
           </Typography>
           <ul style={{ fontSize: 16, marginTop: 3, marginBottom: 20 }}>
-            <li className="font-bold">
-              -Projekt architektoniczny lub aranżacyjny
-            </li>
+            <li className="font-bold">-Wizualizacja pomieszczeń</li>
             <li className="font-bold">-Przedmiar robót</li>
             <li className="font-bold">-Specyfikacja materiałów</li>
             <li className="font-bold">-Rzuty i wymiary pomieszczeń</li>

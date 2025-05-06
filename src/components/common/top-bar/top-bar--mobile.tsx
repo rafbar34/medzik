@@ -34,7 +34,7 @@ export const TopBarMobile = ({
                   onClick={() => setIsFullScreenMenu(false)}
                   height={30}
                   width={200}
-                  src="/pictures/logo2.png"
+                  src="/pictures/logo5.png"
                   alt="logo"
                 />
               </Link>

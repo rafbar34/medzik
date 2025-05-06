@@ -12,6 +12,7 @@ export const MultiFileUpload = () => {
 
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -57,7 +58,7 @@ export const MultiFileUpload = () => {
 
     e.preventDefault();
     if (!formRef.current) return;
-
+    setLoading(true)
     const formData = new FormData(formRef.current);
     files.forEach((file) => {
       formData.append("file", file);
@@ -69,6 +70,7 @@ export const MultiFileUpload = () => {
     });
     const data = await response.json();
     alert(data.message);
+    setLoading(false)
   };
 
   return (
@@ -151,11 +153,13 @@ export const MultiFileUpload = () => {
               </ul>
             </div>
           )}
-          <CustomButton
+
+            <CustomButton
             title="Prześlij"
             width="2/5"
             type="submit"
-          />
+            loading={loading}
+            />
         </form>
       </Box>
     </div>

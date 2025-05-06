@@ -107,13 +107,24 @@ const DesktopImageListItem = ({
         open={IsOpenModalData?.url === item.custom_data.url}
         onClick={() => handleClose()}
         className="flex justify-center items-center p-10"
+        BackdropProps={{
+          style: {
+            backgroundColor: 'rgba(0, 0, 0, 0.8)',
+          },
+        }}
       >
         <img
           src={item.custom_data.url}
           alt={item.alt}
           loading="lazy"
          
-          style={{ width:'75vw', height:'95vh'}}
+          style={{
+            maxWidth: '95vw',
+            maxHeight: '95vh',
+            width: 'auto',
+            height: 'auto',
+            objectFit: 'contain',
+          }}
         />
       </Modal>
     </>

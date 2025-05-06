@@ -16,11 +16,11 @@ export const TopBarDesktop = ({
       sx={{ height: 80, width: "100%" }}
     >
       <Toolbar disableGutters>
-        <Link href={"/"}>
+        <Link className="mt-5" href={"/"}>
           <Image
             height={30}
             width={140}
-            src="/pictures/logo2.png"
+            src="/pictures/logo5.png"
             alt="logo"
           />
         </Link>

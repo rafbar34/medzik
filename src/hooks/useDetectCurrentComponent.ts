@@ -8,6 +8,8 @@ export const useDetectCurrentComponent = (
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const node = ref?.current;
+    if (!node) return;
     if (loading) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -20,15 +22,16 @@ export const useDetectCurrentComponent = (
       }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
-    }
+
+      observer.observe(node);
+    
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
-      }
+
+        observer.unobserve(node);
+        
+      
     };
-  }, [ref, isVisible, loading]);
+  }, [isVisible, loading, threshold, ref]);
   return isVisible;
 };

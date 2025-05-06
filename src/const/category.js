@@ -6,10 +6,10 @@ export  const CATEGORY_ARRAY = [
       desc: "Specjalizujemy się w precyzyjnym układaniu płytek zarówno na ścianach, jak i podłogach. Gwarantujemy estetyczne wykończenie i trwałość na lata — idealne do łazienek, kuchni i tarasów.",
     },
     {
-      src: "/pictures/categories/cat1.png",
+      src: "/pictures/categories/cat1.jpg",
       alt: "elewacja",
       category: 2,
-      desc: "Oferujemy kompleksowe prace elewacyjne, które nie tylko poprawiają wygląd budynku, ale też zwiększają jego izolację termiczną. Stawiamy na trwałe materiały i dokładność wykonania.",
+      desc: "Wykonujemy precyzyjne malowanie ścian, sufitów oraz innych powierzchni wewnętrznych. Przed rozpoczęciem prac dokładnie przygotowujemy podłoże – gruntujemy, szpachlujemy i zabezpieczamy przestrzeń. Efektem są równe, estetyczne powierzchnie i trwały efekt kolorystyczny.",
     },
     {
       src: "/pictures/categories/cat2.jpg",
@@ -18,15 +18,27 @@ export  const CATEGORY_ARRAY = [
       desc: "Wyrównujemy ściany i sufity z najwyższą starannością. Dzięki szpachlowaniu uzyskujemy idealnie gładkie powierzchnie gotowe pod malowanie lub tapetowanie.",
     },
     {
-      src: "/pictures/categories/cat3.jpg",
-      alt: "gruntowanie",
+      src: "/pictures/categories/cat4.jpg",
+      alt: "Montaż podłóg",
       category: 4,
-      desc: "Profesjonalne gruntowanie to podstawa trwałych i estetycznych wykończeń. Stosujemy wysokiej jakości środki gruntujące, które zapewniają lepszą przyczepność i zabezpieczają podłoże.",
+      desc: "Oferujemy profesjonalny montaż paneli, desek podłogowych, płytek i wykładzin. Zapewniamy odpowiednie przygotowanie podłoża, poziomowanie i dobór właściwych materiałów. Efekt to trwała i estetyczna podłoga, dopasowana do charakteru wnętrza i oczekiwań klienta.",
     },
     {
-      src: "/pictures/categories/cat4.jpg",
-      alt: "podłoga",
+      src: "/pictures/categories/cat5.jpg",
+      alt: "Montaż gk",
       category: 5,
-      desc: "Zajmujemy się fachowym montażem paneli podłogowych i ściennych, a także demontażem starych nawierzchni. Dbamy o każdy detal, oferując szybki montaż i elegancki efekt końcowy, idealnie dopasowany do charakteru wnętrza.",
+      desc: "Wykonujemy kompleksowy montaż ścianek działowych, sufitów podwieszanych i zabudów z płyt gipsowo-kartonowych. To idealne rozwiązanie do szybkiego podziału przestrzeni, ukrycia instalacji czy poprawy akustyki pomieszczeń. Prace wykonujemy precyzyjnie, z zachowaniem najwyższych standardów estetyki i trwałości.",
+    },
+    {
+      src: "/pictures/categories/cat6.jpg",
+      alt: "electrican works",
+      category: 6,
+      desc: "Zajmujemy się modyfikacją instalacji elektrycznej i wodno-kanalizacyjnej — od przesunięcia gniazdek i punktów świetlnych, po dostosowanie instalacji do nowych urządzeń kuchennych czy łazienkowych. Wszystkie prace realizujemy zgodnie z aktualnymi normami i zasadami bezpieczeństwa.",
+    },
+    {
+      src: "/pictures/categories/cat7.jpg",
+      alt: "build works",
+      category: 7,
+      desc: "Realizujemy szeroki zakres prac remontowo-budowlanych: murowanie, tynkowanie, montaż drzwi i okien oraz wiele innych. Działamy kompleksowo – od przygotowania powierzchni po finalne wykończenie. Gwarantujemy solidność i terminowość.",
     },
   ];
