@@ -14,10 +14,10 @@ export const InfoSection = () => {
   const ref = useRef(null);
   const isVisible = useDetectCurrentComponent(ref, false);
   const [isMobileDevice, setIsMobileDevice] = React.useState(false);
-  
-    React.useEffect(() => {
-      setIsMobileDevice(isMobile);
-    }, []);
+
+  React.useEffect(() => {
+    setIsMobileDevice(isMobile);
+  }, []);
   return (
     <Box>
       <Header
@@ -45,11 +45,13 @@ const CategoryCard = ({
   alt,
   category,
   desc,
+  disabled = false,
 }: {
   src: string;
   alt: string;
   category: number;
   desc: string;
+  disabled?: boolean;
 }) => {
   return (
     <Card
@@ -61,6 +63,7 @@ const CategoryCard = ({
         position: "relative",
         overflow: "hidden",
         maxWidth: 750,
+        opacity: disabled ? 0.3 : 1,
       }}
     >
       <Typography
@@ -77,6 +80,23 @@ const CategoryCard = ({
       >
         {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}
       </Typography>
+      {disabled && (
+        <Typography
+          gutterBottom
+          sx={{
+            position: "absolute",
+            width: "100%",
+            color: "white",
+            fontSize: 30,
+            padding: 1,
+            textAlign: "center",
+            zIndex: 20,
+            top: "50%",
+          }}
+        >
+          WKRÓTCE
+        </Typography>
+      )}
 
       <CardMedia
         component="img"
@@ -99,38 +119,40 @@ const CategoryCard = ({
           zIndex: 10,
         }}
       />
-      <Box
-        className="transition-transform duration-300 translate-y-full group-hover:translate-y-0"
-        sx={{
-          position: "absolute",
-          bottom: 0,
-          left: 0,
-          width: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          padding: 2,
-          zIndex: 30,
-        }}
-      >
-        <Link href={`/portfolio/${category}`}>
-          <Box className=" min-h-[180px] flex flex-col justify-between">
-            <Typography
-              variant="body1"
-              sx={{
-                color: "rgba(255, 255, 255, 0.878)",
-                fontSize: 18,
-                textAlign: "justify",
-              }}
-            >
-              {desc}
-            </Typography>
-            <Box className="flex justify-end">
-              <IconButton sx={{ color: "white" }}>
-                <ArrowForwardIcon sx={{ fontSize: 36 }} />
-              </IconButton>
+      {!disabled && (
+        <Box
+          className="transition-transform duration-300 translate-y-full group-hover:translate-y-0"
+          sx={{
+            position: "absolute",
+            bottom: 0,
+            left: 0,
+            width: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.5)",
+            padding: 2,
+            zIndex: 30,
+          }}
+        >
+          <Link href={`/portfolio/${category}`}>
+            <Box className=" min-h-[180px] flex flex-col justify-between">
+              <Typography
+                variant="body1"
+                sx={{
+                  color: "rgba(255, 255, 255, 0.878)",
+                  fontSize: 18,
+                  textAlign: "justify",
+                }}
+              >
+                {desc}
+              </Typography>
+              <Box className="flex justify-end">
+                <IconButton sx={{ color: "white" }}>
+                  <ArrowForwardIcon sx={{ fontSize: 36 }} />
+                </IconButton>
+              </Box>
             </Box>
-          </Box>
-        </Link>
-      </Box>
+          </Link>
+        </Box>
+      )}
     </Card>
   );
 };
