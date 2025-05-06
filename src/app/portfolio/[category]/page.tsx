@@ -121,6 +121,7 @@ const Portfolio = () => {
                     paddingTop: "1.25rem",
                     paddingBottom: "1.25rem",
                     fontWeight: "bold",
+                    color:'black'
                   }}
                 >
                   {ENUMS_CATEGORY[category as keyof typeof ENUMS_CATEGORY]}
