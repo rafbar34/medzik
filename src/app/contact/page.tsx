@@ -33,9 +33,7 @@ const Contact = () => {
                 <IconButton color="primary">
                   <Phone />
                 </IconButton>
-                <Typography variant="h5">
-                  +48 881 386 098 Łukasz Niemiec{" "}
-                </Typography>
+                <Typography variant="h5">+48 881 386 098 </Typography>
               </div>
               <div className="flex items-center mb-4 ">
                 <IconButton color="primary">
@@ -63,7 +61,7 @@ const Contact = () => {
           <Box className="xl:w-1/2 h-full mt-2 xl:mt-0">
             <div className="">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.67125451656!2d21.01497943644111!3d52.22967557540833!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471ecc01737a0db7%3A0x7b2cc72d04b6d03d!2sWarszawa!5e0!3m2!1spl!2spl!4v1677221165937!5m2!1spl!2spl"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d25602.578933546165!2d22.0000!3d50.0413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473cfbfb3ba7c87b%3A0x6e5ddf8df430cfbf!2sRzesz%C3%B3w!5e0!3m2!1spl!2spl!4v1680000000000!5m2!1spl!2spl"
                 width="100%"
                 height="270"
                 style={{ border: 0 }}

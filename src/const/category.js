@@ -12,16 +12,16 @@ export  const CATEGORY_ARRAY = [
       desc: "Wykonujemy precyzyjne malowanie ścian, sufitów oraz innych powierzchni wewnętrznych. Przed rozpoczęciem prac dokładnie przygotowujemy podłoże – gruntujemy, szpachlujemy i zabezpieczamy przestrzeń. Efektem są równe, estetyczne powierzchnie i trwały efekt kolorystyczny.",
     },
     {
-      src: "/pictures/categories/cat2.jpg",
-      alt: "szpachlowanie",
-      category: 3,
-      desc: "Wyrównujemy ściany i sufity z najwyższą starannością. Dzięki szpachlowaniu uzyskujemy idealnie gładkie powierzchnie gotowe pod malowanie lub tapetowanie.",
-    },
-    {
       src: "/pictures/categories/cat4.jpg",
       alt: "Montaż podłóg",
-      category: 4,
+      category: 3,
       desc: "Oferujemy profesjonalny montaż paneli, desek podłogowych, płytek i wykładzin. Zapewniamy odpowiednie przygotowanie podłoża, poziomowanie i dobór właściwych materiałów. Efekt to trwała i estetyczna podłoga, dopasowana do charakteru wnętrza i oczekiwań klienta.",
+    },
+    {
+      src: "/pictures/categories/cat2.jpg",
+      alt: "szpachlowanie",
+      category: 4,
+      desc: "Wyrównujemy ściany i sufity z najwyższą starannością. Dzięki szpachlowaniu uzyskujemy idealnie gładkie powierzchnie gotowe pod malowanie lub tapetowanie.",
     },
     {
       src: "/pictures/categories/cat5.jpg",
