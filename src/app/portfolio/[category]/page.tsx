@@ -64,7 +64,7 @@ const Portfolio = () => {
         const getAvailableCategories = data.map(
           (item: CardDataType) => item?.attributes.category
         );
-        setCategoriesData([...new Set(getAvailableCategories)]);
+        setCategoriesData([...new Set(getAvailableCategories?.sort())]);
       } else {
         const filterByCategory = data?.filter(
           (item: CardDataType) => item?.attributes.category === Number(category)
@@ -106,6 +106,7 @@ const Portfolio = () => {
     >
       {!!categoriesData && categoriesData?.length !== 0 ? (
         categoriesData.map((category, index) => {
+          console.log(category)
           return (
             <Box
               className={
