@@ -22,6 +22,10 @@ export const metadata: Metadata = {
 
     locale: "pl_PL"
   },
+  other: {
+    "google-site-verification": "JcIWGgrchnVHvOHUiIrePV9H1IJi9rsO21h9xggAwYw",
+  },
+  
 };
 
 
