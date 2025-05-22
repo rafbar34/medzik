@@ -24,18 +24,18 @@ export  const CATEGORY_ARRAY = [
       desc: "Realizujemy szeroki zakres prac remontowo-budowlanych: murowanie, tynkowanie, montaż drzwi i okien oraz wiele innych. Działamy kompleksowo – od przygotowania powierzchni po finalne wykończenie. Gwarantujemy solidność i terminowość.",
     },
     {
+      src: "/pictures/categories/cat2.jpg",
+      alt: "szpachlowanie",
+      disabled:false,
+      category: 4,
+      desc: "Wyrównujemy ściany i sufity z najwyższą starannością. Dzięki szpachlowaniu uzyskujemy idealnie gładkie powierzchnie gotowe pod malowanie lub tapetowanie.",
+    },
+    {
       src: "/pictures/categories/cat1.jpg",
       alt: "malowanie",
       disabled:true,
       category: 2,
       desc: "Wykonujemy precyzyjne malowanie ścian, sufitów oraz innych powierzchni wewnętrznych. Przed rozpoczęciem prac dokładnie przygotowujemy podłoże – gruntujemy, szpachlujemy i zabezpieczamy przestrzeń. Efektem są równe, estetyczne powierzchnie i trwały efekt kolorystyczny.",
-    },
-    {
-      src: "/pictures/categories/cat2.jpg",
-      alt: "szpachlowanie",
-      disabled:true,
-      category: 4,
-      desc: "Wyrównujemy ściany i sufity z najwyższą starannością. Dzięki szpachlowaniu uzyskujemy idealnie gładkie powierzchnie gotowe pod malowanie lub tapetowanie.",
     },
     {
       src: "/pictures/categories/cat6.jpg",

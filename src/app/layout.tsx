@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description:
     "Profesjonalne usługi remontowe – kompleksowe remonty mieszkań, domów i biur.",
   keywords:
-    "remonty, usługi remontowe, remont mieszkań, remonty domów, remont biur, wykończenia wnętrz, Podkarpacie, Debica, Rzeszow, profesjonalne usługi remontowe",
+    "remonty, usługi remontowe, remont mieszkań, remonty domów, Wykończeniowka Rzeszów, wykończenia wnętrz, Podkarpacie, Rzeszow, Glazurnictwo Rzeszów, Firma budowlana Rzeszów",
   robots: "index, follow",
   viewport: "width=device-width, initial-scale=1.0",
   icons: {
@@ -49,3 +49,4 @@ export default function RootLayout({
     </html>
   );
 }
+
